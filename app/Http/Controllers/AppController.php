@@ -13,4 +13,9 @@ class AppController extends Controller
         return view('index',['publications'=>$publications]);
     }
 
+    public function indexForCarrusel() {
+        $publications = Publications::limit(5)->get(); // Obtén las primeras 5 publicaciones para el carrusel
+        return view('carrusel.carrusel', ['publications' => $publications]);
+    }
+
 }

@@ -32,6 +32,9 @@ use App\Http\Controllers\GaleryController;
 // Index
 Route::get('/', [AppController::class,'index'])->name('index');
 
+// Carrusel
+Route::get('/carrusel/carrusel', [AppController::class, 'indexForCarrusel'])->name('carrusel.carrusel');
+
 // Imagenes
 Route::post('/imagenes', [ImagenController::class,'store'])->name('image.store');
 

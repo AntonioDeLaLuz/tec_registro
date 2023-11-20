@@ -59,14 +59,14 @@
             <div>
                 <div class="grid md:grid-cols-3 gap-4">
                     @foreach ($paginatePublications as $p)
-                    <div class="bg-BotonesVerMas pb-3">
+                    <div class="bg-primario pb-3">
                         <div class="overflow-hidden">
                             <img class="w-full max-h-25  h-25 " src="{{ asset('uploads') . "/" . "$p->urlimg" }}" alt="{{$p->name}}">
                         </div>
                         <div class="mt-6">
                             <h1 class="text-center text-2xl uppercase my-2 text-white font-semibold">{{$p->name}}</h1>
                             <div class="grid place-items-center mt-4">
-                                <a href="{{ route('publications.show',['publication'=>$p->name]) }}" class="bg-secundario inline-block  mt-4 text-2xl font-semibold text-white py-2 px-3 rounded-sm ">Ver más</a>
+                                <a href="{{ route('publications.show',['publication'=>$p->name]) }}" class="bg-BotonesVerMas inline-block  mt-4 text-2xl font-semibold text-white py-2 px-3 rounded-sm ">Ver más</a>
                             </div>
                         </div>
                     </div>

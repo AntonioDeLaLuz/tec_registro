@@ -6,7 +6,7 @@
         <title>@yield('title')</title>
         {{-- Barra de estilos --}}
         @stack('styles')
-        <link rel="stylesheet" href="{{ asset('build/assets/app.3ab533d1.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app.4bcba46b.css') }}">
         <link rel="shortcut icon" href="{{ asset('img/favicon/Logocolorabeja_peque.ico') }}" type="image/x-icon">
         {{-- archivos js --}}
         <script src="{{ asset('build/assets/app.46046821.js') }}" defer></script>
