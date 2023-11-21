@@ -20,7 +20,7 @@ module.exports = {
         'PanelAdministracionBTN': '#1B396A', // color de fondo de la lista de opciones de administrador
         'BlancoBTN': '#FFFFFF', // color de fondo de los iconos de redes en el home
         'TituloSecciones': '#000000', // color titulo secciones principales publicaciones,administracion,ect.
-        'LineAmarilla': ' #E2B686',
+        'Line': '#807E82', // Linea de las tablas
       },
     },
   },

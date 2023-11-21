@@ -30,13 +30,15 @@
                             @enderror
                         </div>
                     </div>
+
                     <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="activos">Principales activos:</label>
-                        <input class=" px-4 py-2 block w-full shadow-md rounded-sm @error('activos') border-red-500 @enderror" type="text" id="activos" name="activos" placeholder="Ingrese los principales activos" value="{{old('activos')}}">
-                        @error('activos')
-                            <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
+                        <label class="font-bold text-primario uppercase mb-4 block" for="formas_uso">Por definir si va un autor:</label>
+                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('formas_uso') border-red-500 @enderror " id="formas_uso" name="formas_uso">{{old('formas_uso')}}</textarea>
+                        @error('formas_uso')
+                        <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                         @enderror
                     </div>
+
                     <div class="mb-5">
                         <label class="font-bold text-primario uppercase mb-4 block" for="descripcion">Descripción:</label>
                         <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('descripcion') border-red-500 @enderror" id="descripcion" name="descripcion">{{old('descripcion')}}</textarea>
@@ -44,27 +46,7 @@
                         <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                         @enderror
                     </div>
-                    <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="formas_uso">Formas de uso:</label>
-                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('formas_uso') border-red-500 @enderror " id="formas_uso" name="formas_uso">{{old('formas_uso')}}</textarea>
-                        @error('formas_uso')
-                        <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
-                    @enderror
-                    </div>
-                    <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="distribucion">Distribución:</label>
-                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('distribucion') border-red-500 @enderror" id="distribucion" name="distribucion">{{old('distribucion')}}</textarea>
-                        @error('distribucion')
-                        <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
-                    @enderror
-                    </div>
-                    <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="usos">Usos:</label>
-                        <textarea class="px-4 py-2 block w-full shadow-md rounded-sm  @error('usos') border-red-500 @enderror" id="usos" name="usos">{{old('usos')}}</textarea>
-                        @error('usos')
-                        <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
-                    @enderror
-                    </div>
+
                     <div class="mb-5">
                         <input type="hidden" name="urlimg" value="">
                         @error('urlimg')

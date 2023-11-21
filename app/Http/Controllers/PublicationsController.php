@@ -30,20 +30,14 @@ class PublicationsController extends Controller{
             'name'=>' required | min:3 | max:255',
             'sub_title'=>'required | min:5 | max:255',
             'formas_uso'=>'required | min:5 | max:255',
-            'distribucion'=>'required | min:5 | max:255',
             'descripcion'=>'required | min:5 | max:255',
-            'usos'=>'required | min:5 | max:255',
-            'activos'=>'required | min:5 | max:255',
             'urlimg'=>'required'
         ]);
         Publications::create([
             'name'=>$request->name,
             'sub_title'=>$request->sub_title,
             'formas_uso'=>$request->formas_uso,
-            'distribucion'=>$request->distribucion,
             'descripcion'=>$request->descripcion,
-            'usos'=>$request->usos,
-            'activos'=>$request->activos,
             'urlimg'=>$request->urlimg
          ]);
         return redirect()->route('publications.catalogue');
@@ -61,10 +55,7 @@ class PublicationsController extends Controller{
              'name'=>' required | min:3 | max:255',
              'sub_title'=>'required | min:5 | max:255',
              'formas_uso'=>'required | min:5 | max:255',
-             'distribucion'=>'required | min:5 | max:255',
              'descripcion'=>'required | min:5 | max:255',
-             'usos'=>'required | min:5 | max:255',
-             'activos'=>'required | min:5 | max:255',
              'urlimg'=>'required'
          ]);
          $publication->update([

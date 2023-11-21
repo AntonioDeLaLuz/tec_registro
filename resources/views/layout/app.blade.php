@@ -6,7 +6,7 @@
         <title>@yield('title')</title>
         {{-- Barra de estilos --}}
         @stack('styles')
-        <link rel="stylesheet" href="{{ asset('build/assets/app.4bcba46b.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app.b4cd5882.css') }}">
         <link rel="shortcut icon" href="{{ asset('img/favicon/Logocolorabeja_peque.ico') }}" type="image/x-icon">
         {{-- archivos js --}}
         <script src="{{ asset('build/assets/app.46046821.js') }}" defer></script>
@@ -25,7 +25,7 @@
 
                 <a href="{{ route('publications.catalogue')}}" class="text-center text-white font-bold text-3xl no-underline flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
                       </svg>
                       Publicaciones</a>
 <!--                <a href="{{ route('posts.catalogue') }}" class="text-center text-white font-bold text-3xl no-underline flex items-center gap-2">-->
@@ -35,11 +35,6 @@
 <!--                      Colaboradores</a>-->
 
                       @auth
-<!--                      <a class="text-center text-white font-bold text-3xl no-underline flex items-center gap-2">-->
-<!--                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">-->
-<!--                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />-->
-<!--                        </svg>-->
-<!--                        {{auth()->user()->name . " " . auth()->user()->lastnameP }}</a>-->
                         @if (auth()->user()->type==2)
                         <a href="{{ route('admin.index')}}" class="text-center text-white font-bold text-3xl no-underline flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
@@ -100,7 +95,10 @@
                             <img src="{{ asset('img/whats.png') }}" class="w-8 h-8 mx-auto" alt="">
                         </div>
                     </div>
-<!--                    <img class="h- 25 mx-auto" src="{{ asset('img/LogocolorabejaBLANCO_pque.png') }}" alt="">-->
+                    <div class="py-3 px-0">
+                        <p </p>
+                    </div>
+                    <img class="h- 25 mx-auto" src="{{ asset('img/Logo_itsx_blanco_peque.png') }}" alt="">
                 </div>
             </div>
 

@@ -21,8 +21,5 @@ Tec Registro
     </div>
 </section>
 
-<!--<section class="my-15 container mx-auto">-->
-<!--    @include('carrusel.carrusel')-->
-<!--</section>-->
 
 @endsection

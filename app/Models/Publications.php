@@ -31,10 +31,10 @@ class Publications extends Model
         return $this->hasMany(Like::class);
     }
     // Revisar si ya tiene like
-    public function checkLike(?User $user)
+    public function checkLike(?User $usersEvent)
     {
-        if ($user) {
-            return $this->likes->contains('user_id', $user->id);
+        if ($usersEvent) {
+            return $this->likes->contains('user_id', $usersEvent->id);
         }
         return false;
     }

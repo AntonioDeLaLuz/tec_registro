@@ -15,7 +15,9 @@ Tec Registro
         <div class="carousel-inner">
             @foreach($publications as $key => $publication)
             <div class="item {{ $key == 0 ? 'active' : '' }}">
-                <img src="{{ asset('uploads') . '/' . $publication->urlimg }}" alt="{{ $publication->name }}" style="width: 100%; cursor: pointer;" onclick="window.location='/publications/show/{{ $publication->name }}'">
+                <img src="{{ asset('uploads') . '/' . $publication->urlimg }}" alt="{{ $publication->name }}"
+                     style="width: 100%; cursor: pointer;"
+                     onclick="window.location='/publications/show/{{ $publication->name }}'">
             </div>
             @endforeach
         </div>
