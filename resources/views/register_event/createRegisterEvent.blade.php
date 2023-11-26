@@ -84,11 +84,11 @@
 
             <div class="mb-5">
                 
-                <input type="hidden" name="type" value="2">
+                <input type="hidden" name="type" value="3">
             </div>
         </div>
         <div class="grid items-center">
-            <input type="submit" value="Registrar cuenta" class="uppercase font-bold bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-sm rounded-xl cursor-pointer">
+            <input type="submit" value="Registrar inscripción" class="uppercase font-bold bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-sm rounded-xl cursor-pointer">
         </div>
     </form>
     <div>

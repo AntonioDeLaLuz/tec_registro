@@ -25,9 +25,10 @@ class RegisterEventController extends Controller
             'colaborador_4'=>['max:100'],
             'colaborador_5'=>['max:100'],
             'colaborador_6'=>['max:100']
+
         ]);
 
-        // dd('creando usuario');
+        // dd('creando registro evento');
         RegisterEvent::create([
             'user_id' => auth()->user()->id,
             'publications_id' => $publication->id,

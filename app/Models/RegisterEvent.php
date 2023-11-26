@@ -55,7 +55,6 @@ class RegisterEvent extends Authenticatable
     protected $hidden = [
         'created_at',
         'updated_at',
-        'deleted_at'
     ];
 
     /**
@@ -66,7 +65,6 @@ class RegisterEvent extends Authenticatable
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at'
     ];
 
     /**
@@ -78,8 +76,4 @@ class RegisterEvent extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function likes(){
-        // Extraer todos los likes
-        return $this->hasMany(Like::class);
-    }
 }
