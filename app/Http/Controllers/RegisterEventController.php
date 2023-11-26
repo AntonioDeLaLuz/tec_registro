@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserEvent;
+use App\Models\Publications;
+use App\Models\RegisterEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -12,13 +13,8 @@ class RegisterEventController extends Controller
     public function create(){
         return view('auth.createRegisterEvent');
     }
-    public function store(Request $request){
+    public function store(Request $request, Publications $publication){
         $this->validate($request,[
-            'name'=>'required|min:3|max:20',
-            'lastnameP'=>['required','min:5','max:20'],
-            'lastnameM'=>['required','min:5','max:20'],
-            'email'=>['required','min:10','unique:users'],
-            'password'=>['required','min:9','confirmed'],
             'nombreCA'=>['required','min:5','max:100'],
             'lider'=>['required','min:5','max:100'],
             'instituto'=>['required'],
@@ -32,13 +28,9 @@ class RegisterEventController extends Controller
         ]);
 
         // dd('creando usuario');
-        UserEvent::create([
-            'name'=>$request->name,
-            'lastnameP'=>$request->lastnameP,
-            'lastnameM'=>$request->lastnameM,
-            'email'=>$request->email,
-            'type'=>$request->type,
-            'password'=>Hash::make($request->password),
+        RegisterEvent::create([
+            'user_id' => auth()->user()->id,
+            'publications_id' => $publication->id,
             'nombreCA'=>$request->nombreCA,
             'lider'=>$request->lider,
             'instituto'=>$request->instituto,
@@ -50,10 +42,18 @@ class RegisterEventController extends Controller
             'colaborador_5'=>$request->colaborador_5,
             'colaborador_6'=>$request->colaborador_6
         ]);
-         // Otra forma de autenticar
-         auth()->attempt($request->only('email','password'));
-
-         // Redireccionar
-         return redirect()->route('register.login');
+        //  regresar a la pagina anterior
+        return view('publications.profile',['publication'=>$publication]);
+    }
+    public function destroy(RegisterEvent $register_event){
+        $register_event->delete();
+        $registers_event = RegisterEvent::all();
+        return redirect()->route('admin.registerEvent', ['registers_event' => $registers_event]);
+    }
+    public function update(RegisterEvent $register_event){
+        $register_event->update([
+            'validacion'=>'1'
+        ]);
+        return back();
     }
 }

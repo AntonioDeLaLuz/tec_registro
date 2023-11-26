@@ -6,9 +6,9 @@ Inscripciones
 <h1 class="px-12 py-6 mt-5 text-primario text-center font-bold uppercase text-4xl ">Inscripciones</h1>
 <div class="container mx-auto w-full">
     <div class="flex justify-between my-8">
-        <a href="{{ route('admin.index') }}" class="bg-BotonesVolver uppercase font-boldborder-none text-white py-6 px-10 mx-auto inline-block shadow-sm rounded-xl cursor-pointer"> Volver</a>
+        <a href="{{ route('admin.index') }}" class="bg-BotonesVolver uppercase font-boldborder-none text-white py-6 px-10 mx-auto inline-block shadow-sm rounded-xl cursor-pointer">Volver</a>
     </div>
-    @if($registers->count()<=0)
+    @if($registers_event->count()<=0)
     <p class="text-center font-semibold my-4 uppercase">No hay inscripciones</p>
     @else
     <table class="w-full">
@@ -24,15 +24,15 @@ Inscripciones
         @php
         $contador = 1;
         @endphp
-        @foreach ($registers as $register )
+        @foreach ($registers_event as $register_event )
         <tr>
             <td class="text-center">{{$contador++ }}</td>
-            <td class="text-center">{{$register->name . " " . $register->lastnameP . " " . $register->lastnameM}}</td>
-            <td class="text-center">{{$register->publication_name}}</td>
+            <td class="text-center">{{$register_event->name . " " . $register_event->lastnameP . " " . $register_event->lastnameM}}</td>
+            <td class="text-center">{{$register_event->publication_name}}</td>
             <td>
                 <div class="grid grid-cols-2 place-items-center">
                     {{-- Validar --}}
-                    <form action="{{ route('register.validate',$register->id)}}" method="POST" >
+                    <form action="{{ route('register.validate',$register_event->id)}}" method="POST" >
                         @csrf
                         <div class="flex place-items-center bg-green-500 p-2 rounded-xl hover:bg-green-600">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -44,7 +44,7 @@ Inscripciones
                         </div>
                     </form>
                     {{-- Eliminar --}}
-                    <form action="{{ route('register.destroy', $register->id) }}" method="POST" >
+                    <form action="{{ route('register.destroy', $register_event->id) }}" method="POST" >
                         @method('DELETE')
                         @csrf
                         <div class="flex place-items-center bg-red-500 p-2 rounded-xl hover:bg-red-700 ">

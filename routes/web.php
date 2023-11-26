@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\RegisterEventController;
-use App\Http\Controllers\UserRegisterInEventController;
-use App\Models\Publications;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\LikeController;
@@ -14,7 +12,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PublicationsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
-use App\Http\Controllers\GaleryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,8 +53,7 @@ Route::get('/administracion/publications', [AdminController::class,'adminPublica
 Route::get('/administracion/colaboradores', [AdminController::class,'adminPosts'])->name('admin.posts');
 Route::get('/administracion/comentarios', [AdminController::class,'adminComentarios'])->name('admin.comentarios');
 Route::get('/administracion/usuarios', [AdminController::class,'adminUsers'])->name('admin.users');
-//Route::get('/administracion/usuariosEvent', [AdminController::class,'adminUsersEvent'])->name('admin.usersEvent');
-Route::get('/administracion/usuariosEvent', [AdminController::class,'adminRegisterUserEvent'])->name('admin.usuariosEvent');
+Route::get('/administracion/registerEvent', [AdminController::class,'adminRegisterEvent'])->name('admin.registerEvent');
 
 // Login
 Route::get('/iniciar-sesion',[LoginController::class,'index'])->name('register.login');
@@ -91,7 +88,7 @@ Route::delete('/comentario/{comentario}',[ ComentarioController::class,'destroy'
 Route::post('/publications/{publication}/likes',[LikeController::class,'store'])->name('publications.likes.store');
 Route::delete('/publications/{publication}/likes',[LikeController::class,'destroy'])->name('publications.likes.destroy');
 
-// RegistroUserEvent
-Route::post('/register/{publication:name}',[UserRegisterInEventController::class,'store'])->name('register.store');
-Route::post('/register/{register}',[ UserRegisterInEventController::class,'update'])->name('register.validate');
-Route::delete('/register/{register}',[ UserRegisterInEventController::class,'destroy'])->name('register.destroy');
+// Registro de evento
+Route::post('/register/{publication:name}',[RegisterEventController::class,'store'])->name('register.store');
+Route::post('/register/{register}',[ RegisterEventController::class,'update'])->name('register.validate');
+Route::delete('/register/{register}',[ RegisterEventController::class,'destroy'])->name('register.destroy');

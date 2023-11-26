@@ -11,7 +11,7 @@ Gestión de usuarios
     </div>
     <table class="w-full">
         <thead>
-        <tr>
+        <tr class="bg-primario">
             <th class="uppercase text-white p-2">Número</th>
             <th class="uppercase text-white p-2">Nombre</th>
             <th class="uppercase text-white p-2">Correo</th>

@@ -14,9 +14,9 @@ Gestión de comentarios
     <table class="w-full">
         <thead class="bg-primario ">
         <tr>
-            <th class="uppercase text-white p-2">ID</th>
+            <th class="uppercase text-white p-2">Número</th>
             <th class="uppercase text-white p-2">Autor</th>
-            <th class="uppercase text-white p-2">Planta</th>
+            <th class="uppercase text-white p-2">Publicación</th>
             <th class="uppercase text-white p-2">Comentario</th>
             <th class="uppercase text-white p-2">Acciones</th>
         </tr>

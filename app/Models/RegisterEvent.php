@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class UserEvent extends Authenticatable
+class RegisterEvent extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -17,7 +17,7 @@ class UserEvent extends Authenticatable
      *
      * @var string
      */
-    protected $table = 'users_event';
+    protected $table = 'register_event';
 
     /**
      * The primary key associated with the table.
@@ -32,13 +32,8 @@ class UserEvent extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'password',
-        'remember_token',
-        'type',
-        'name',
-        'lastnameP',
-        'lastnameM',
-        'email',
+        'user_id',
+        'publications_id',
         'nombreCA',
         'lider',
         'instituto',
@@ -58,11 +53,6 @@ class UserEvent extends Authenticatable
      */
 
     protected $hidden = [
-        'password',
-        'remember_token',
-        'type',
-        'lastnameP',
-        'lastnameM',
         'created_at',
         'updated_at',
         'deleted_at'
