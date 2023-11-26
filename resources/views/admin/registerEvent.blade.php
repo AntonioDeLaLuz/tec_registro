@@ -18,6 +18,7 @@ Inscripciones
             <th class="uppercase text-white p-2">Nombre</th>
             <th class="uppercase text-white p-2">Publicacion</th>
             <th class="uppercase text-white p-2">Acciones</th>
+            <th class="uppercase text-white p-2">esto es una adaptacion</th>
         </tr>
         </thead>
         <tbody>
