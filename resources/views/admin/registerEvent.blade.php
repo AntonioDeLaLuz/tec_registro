@@ -1,40 +1,39 @@
 @extends('layout.app')
 @section('title')
-Gestión de comentarios
+Inscripciones
 @endsection
 @section('contenido')
-<h1 class="px-12 py-6 mt-5 text-primario text-center font-bold uppercase text-4xl ">Administración de comentarios</h1>
+<h1 class="px-12 py-6 mt-5 text-primario text-center font-bold uppercase text-4xl ">Inscripciones</h1>
 <div class="container mx-auto w-full">
     <div class="flex justify-between my-8">
-        <a href="{{ route('admin.index') }}" class="bg-BotonesVolver uppercase font-boldborder-none text-white py-6 px-10 mx-auto inline-block shadow-sm rounded-xl cursor-pointer"> Volver</a>
+        <a href="{{ route('admin.index') }}" class="bg-BotonesVolver uppercase font-boldborder-none text-white py-6 px-10 mx-auto inline-block shadow-sm rounded-xl cursor-pointer">Volver</a>
     </div>
-    @if($comentarios->count()<=0)
-    <p class="text-center font-semibold my-4 uppercase">No hay comentarios por validar</p>
+    @if($registers_event->count()<=0)
+    <p class="text-center font-semibold my-4 uppercase">No hay inscripciones</p>
     @else
     <table class="w-full">
         <thead class="bg-primario ">
         <tr>
             <th class="uppercase text-white p-2">Número</th>
-            <th class="uppercase text-white p-2">Autor</th>
-            <th class="uppercase text-white p-2">Publicación</th>
-            <th class="uppercase text-white p-2">Comentario</th>
+            <th class="uppercase text-white p-2">Nombre</th>
+            <th class="uppercase text-white p-2">Publicacion</th>
             <th class="uppercase text-white p-2">Acciones</th>
+            <th class="uppercase text-white p-2">esto es una adaptacion</th>
         </tr>
         </thead>
         <tbody>
         @php
         $contador = 1;
         @endphp
-        @foreach ($comentarios as $comentario )
+        @foreach ($registers_event as $register_event )
         <tr>
             <td class="text-center">{{$contador++ }}</td>
-            <td class="text-center">{{$comentario->name . " " . $comentario->lastnameP . " " . $comentario->lastnameM}}</td>
-            <td class="text-center">{{$comentario->publication_name}}</td>
-            <td class="text-center">{{$comentario->comentario}}</td>
+            <td class="text-center">{{$register_event->name . " " . $register_event->lastnameP . " " . $register_event->lastnameM}}</td>
+            <td class="text-center">{{$register_event->publication_name}}</td>
             <td>
                 <div class="grid grid-cols-2 place-items-center">
                     {{-- Validar --}}
-                    <form action="{{ route('comentarios.validate',$comentario->id)}}" method="POST" >
+                    <form action="{{ route('register.validate',$register_event->id)}}" method="POST" >
                         @csrf
                         <div class="flex place-items-center bg-green-500 p-2 rounded-xl hover:bg-green-600">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -46,7 +45,7 @@ Gestión de comentarios
                         </div>
                     </form>
                     {{-- Eliminar --}}
-                    <form action="{{ route('comentarios.destroy', $comentario->id) }}" method="POST" >
+                    <form action="{{ route('register.destroy', $register_event->id) }}" method="POST" >
                         @method('DELETE')
                         @csrf
                         <div class="flex place-items-center bg-red-500 p-2 rounded-xl hover:bg-red-700 ">

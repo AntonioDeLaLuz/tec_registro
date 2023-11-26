@@ -26,15 +26,21 @@ class Publications extends Model
         // return $this->hasMany(Comentario::class)->join('users', 'users.id', '=', 'comentarios.user_id')->where('validacion', 1)->get();
         return $this->hasMany(Comentario::class)->join('users', 'users.id', '=', 'comentarios.user_id')->where('validacion', 1)->select('users.name','users.lastnameP','users.lastnameM', 'comentarios.comentario','comentarios.created_at')->get();
     }
+    // Obtener los comentarios
+    public function register(){
+        // Una publicacion puede tener multiples comentarios
+        // return $this->hasMany(Comentario::class)->join('users', 'users.id', '=', 'comentarios.user_id')->where('validacion', 1)->get();
+        return $this->hasMany(RegisterEvent::class)->join('users', 'users.id', '=', 'comentarios.user_id')->where('validacion', 1)->select('users.name','users.lastnameP','users.lastnameM', 'comentarios.comentario','comentarios.created_at')->get();
+    }
     // Función de likes
     public function likes(){
         return $this->hasMany(Like::class);
     }
     // Revisar si ya tiene like
-    public function checkLike(?User $user)
+    public function checkLike(?User $users)
     {
-        if ($user) {
-            return $this->likes->contains('user_id', $user->id);
+        if ($users) {
+            return $this->likes->contains('user_id', $users->id);
         }
         return false;
     }

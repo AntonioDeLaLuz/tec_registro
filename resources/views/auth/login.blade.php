@@ -34,7 +34,7 @@
             <div class="mb-5">
                 <input type="checkbox" name="remember" id="sesion"> <label for="sesion" class="  text-center  text-gray-400 ">Mantener la sesión abierta</label> 
             </div>
-            <p class="my-10 text-center"><a href="{{ route('register.create') }}">¿No tiene una cuenta ahora? <span>Regístrese Ahora</span>  </a></p>
+            <p class="my-10 text-center"><a href="{{ route('register.create') }}">¿No tiene una cuenta ahora? Regístrese Ahora  </a></p>
             <div class="grid place-items-center">
                 <input type="submit" value="Iniciar sesión" class="uppercase font-bold bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-sm rounded-xl hover:cursor-pointer">
             </div>

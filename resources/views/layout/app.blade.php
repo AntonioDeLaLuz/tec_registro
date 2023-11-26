@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<<<<<<< HEAD
+=======
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>@yield('title')</title>
+        {{-- Barra de estilos --}}
+        @stack('styles')
+        <link rel="stylesheet" href="{{ asset('build/assets/app.b4cd5882.css') }}">
+        <link rel="shortcut icon" href="{{ asset('img/favicon/Logocolorabeja_peque.ico') }}" type="image/x-icon">
+        {{-- archivos js --}}
+        <script src="{{ asset('build/assets/app.46046821.js') }}" defer></script>
+        {{-- Agrega estilos de live --}}
+        @livewireStyles
+>>>>>>> 2d65ffa3ce8cfa57b2ced6c9fe965a3f90ae2e0e
 
 <head>
     <meta charset="utf-8">
@@ -113,6 +128,13 @@
                     <div class="bg-BlancoBTN  px-5 py-3 rounded-xl">
                         <img src="{{ asset('img/whats.png') }}" class="w-8 h-8 mx-auto" alt="">
                     </div>
+<<<<<<< HEAD
+=======
+                    <div class="py-3 px-0">
+                        <p </p>
+                    </div>
+                    <img class="h- 25 mx-auto" src="{{ asset('img/Logo_itsx_blanco_peque.png') }}" alt="">
+>>>>>>> 2d65ffa3ce8cfa57b2ced6c9fe965a3f90ae2e0e
                 </div>
             </div>
         </div>

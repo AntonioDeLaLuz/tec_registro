@@ -19,14 +19,9 @@ Panel de administración
                         <p class="text-3xl text-center text-white uppercase m-0">Usuarios</p>
                     </div>
                 </a>
-                <a href="{{ route('admin.users') }}" class="block mb-5 ">
+                <a href="{{ route('admin.registerEvent') }}" class="block mb-5 ">
                     <div class="bg-PanelAdministracionBTN px-4 py-6">
                         <p class="text-3xl text-center text-white uppercase m-0">Inscripciones</p>
-                    </div>
-                </a>
-                <a href="{{ route('admin.posts') }}" class="block mb-5 ">
-                    <div class="bg-PanelAdministracionBTN px-4 py-6">
-                        <p class="text-3xl text-center text-white uppercase m-0">Colaboradores</p>
                     </div>
                 </a>
                 <a href="{{ route('admin.comentarios') }}" class="block mb-5 ">

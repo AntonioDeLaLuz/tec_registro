@@ -42,19 +42,15 @@
                     </div>    
                 </div>
                 <div>
-                    <h2 class="block uppercase text-6xl text-primario text-center mb-3">{{ $publication->name }}</h2>
+                    <h2 class="block text-6xl text-terciario text-center mb-3">{{ $publication->name }}</h2>
                     <em class="block text-center text-3xl my-4 ">{{ $publication->sub_title }}</em>
-                    <p class="text-justify mt-10">{{ $publication->descripcion }}</p>
                 </div>
             </div>
             <div class="my-10">
-                <h3 class="font-semibold text-primario text-4xl mb-4">Usos</h3>
-                <p class="text-justify text-xl">{{ $publication->formas_uso }}</p>
+                <h3 class="font-semibold text-primario text-4xl mb-4">Descripción</h3>
+                <p class="text-justify text-xl">{{ $publication->descripcion }}</p>
             </div>
-            <div class="my-10">
-                <h3 class="font-semibold text-primario text-4xl mb-4">Principales activos</h3>
-                <p class="text-justify text-xl">{{ $publication->activos }}</p>
-            </div>
+
             {{-- paginacion --}}
             <div>
                 <div class="grid md:grid-cols-3 gap-4">
@@ -82,15 +78,33 @@
         {{-- aside --}}
         <div>
             <div>
-                <h2 class="uppercase  text-primario text-5xl">Detalles</h2>
-                <div class="my-10">
-                    <h3 class="font-semibold text-primario text-4xl mb-4">Formas de uso</h3>
-                    <p class="text-justify text-xl">{{ $publication->usos }}</p>
+<!--                <h2 class="uppercase  text-primario text-5xl">Inscripciones</h2>-->
+                {{-- Agregar inscripcion --}}
+                @auth
+                <div class="shadow bg-white p-5 mb-5">
+                    <h2 class="uppercase  text-primario text-3xl text-center mb-4">Inscripciones</h2>
+                    @if (session('mensaje'))
+                    <div class="bg-green-400 p-2 rounded-md mb-5">
+                        <p class="text-center uppercase font-semibold">{{ session('mensaje') }}</p>
+                    </div>
+                    @endif
+                    <form action=" {{ route('register.store', ['publication' => $publication]) }} " method="post">
+                        @csrf
+                        <div class="mb-5">
+<!--                            <label class="font-bold text-primario uppercase mb-4 block" for="comentario">Inscripciones abiertas</label>-->
+                            @error('comentario')
+                            <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{ $message }}
+                            </p>
+                            @enderror
+                        </div>
+                        <input type="hidden" value="0" name="validacion">
+                        <div class="grid items-center">
+                            <input type="submit" value="Inscribete"
+                                   class="uppercase bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-xl rounded-3xl mb-4 hover:cursor-pointer">
+                        </div>
+                    </form>
                 </div>
-                <div class="my-10">
-                    <h3 class="font-semibold text-primario text-4xl mb-4">Ditribución</h3>
-                    <p class="text-justify text-xl">{{ $publication->distribucion }}</p>
-                </div>
+                @endauth
             </div>
             {{-- Agregar comentarios --}}
             @auth

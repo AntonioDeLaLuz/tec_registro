@@ -16,27 +16,21 @@
                 <div class="p-4">
                     <div class="grid md:grid-cols-2 mt-6 gap-4">
                         <div class="mb-5">
-                            <label class="font-bold text-primario uppercase mb-4 block" for="name">Nombre:</label>
+                            <label class="font-bold text-primario uppercase mb-4 block" for="name">Titulo:</label>
                             <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('name') border-red-500 @enderror " type="text" id="name" name="name" placeholder="Ingrese el titulo de la publicación" value="{{$publication->name}}">
                             @error('name')
                             <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                             @enderror
                         </div>
                         <div class="mb-5">
-                            <label class="font-bold text-primario uppercase mb-4 block" for="sub_title">Nombre científico:</label>
+                            <label class="font-bold text-primario uppercase mb-4 block" for="sub_title">Sub-titulo:</label>
                             <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('sub_title') border-red-500 @enderror" type="text" id="sub_title" name="sub_title" placeholder="Ingrese el sub-titulo de la publicación" value="{{$publication->sub_title}}">
                             @error('sub_title')
                             <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                             @enderror
                         </div>
                     </div>
-                    <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="activos">Principales activos:</label>
-                        <input class=" px-4 py-2 block w-full shadow-md rounded-sm @error('activos') border-red-500 @enderror" type="text" id="activos" name="activos" placeholder="Ingrese los principales activos" value="{{$publication->activos}}">
-                        @error('activos')
-                            <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
-                        @enderror
-                    </div>
+
                     <div class="mb-5">
                         <label class="font-bold text-primario uppercase mb-4 block" for="descripcion">Descripción:</label>
                         <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('descripcion') border-red-500 @enderror" id="descripcion" name="descripcion">{{$publication->descripcion}}</textarea>
@@ -45,26 +39,13 @@
                         @enderror
                     </div>
                     <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="formas_uso">Formas de uso:</label>
+                        <label class="font-bold text-primario uppercase mb-4 block" for="formas_uso">Por definir si va un autor:</label>
                         <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('formas_uso') border-red-500 @enderror " id="formas_uso" name="formas_uso">{{$publication->formas_uso}}</textarea>
                         @error('formas_uso')
                         <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                     @enderror
                     </div>
-                    <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="distribucion">Distribución:</label>
-                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('distribucion') border-red-500 @enderror" id="distribucion" name="distribucion">{{$publication->distribucion}}</textarea>
-                        @error('distribucion')
-                        <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
-                    @enderror
-                    </div>
-                    <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="usos">Usos:</label>
-                        <textarea class="px-4 py-2 block w-full shadow-md rounded-sm  @error('usos') border-red-500 @enderror" id="usos" name="usos">{{$publication->usos}}</textarea>
-                        @error('usos')
-                        <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
-                    @enderror
-                    </div>
+
                     <div class="mb-5">
                         <input type="hidden" name="urlimg" value="{{$publication->urlimg}}">
                         @error('urlimg')
