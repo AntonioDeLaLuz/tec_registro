@@ -7,10 +7,11 @@
     <title>@yield('title')</title>
     {{-- Barra de estilos --}}
     @stack('styles')
-    <link rel="stylesheet" href="{{ asset('build/assets/app.5a939405.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app.560f03db.css') }}">
     <link rel="shortcut icon" href="{{ asset('img/favicon/') }}" type="image/x-icon">
     {{-- archivos js --}}
     <script src="{{ asset('build/assets/app.46046821.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/c311e4c45d.js" crossorigin="anonymous"></script>
     {{-- Agrega estilos de live --}}
     @livewireStyles
 
@@ -28,7 +29,7 @@
                         d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>Inicio</a>
 
-            <a href="{{ route('eventos.catalogue') }}"
+            <a href="{{ route('pages.eventos') }}"
                 class="text-center text-white font-bold text-3xl no-underline flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-8 h-8">
@@ -91,6 +92,7 @@
             </div>
             <div class="">
                 <div class="py-10">
+                    <p class="mb-3 text-white text-center md:text-left text-4xl">Ubicación</p>
                     <div class="p-5">
                         <p class="mb-3 text-white text-center md:text-left">Sección 5A Reserva Territorial S/N</p>
                         <p class="mb-3 text-white text-center md:text-left">Santa Bárbara, 91096</p>

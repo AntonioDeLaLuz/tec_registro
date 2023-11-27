@@ -40,7 +40,7 @@ Route::post('/crear-usuario',[ RegisterController::class,'store']);
 
 
 // Comentarios
-Route::post('/comentario/{publication:name}',[ComentarioController::class,'store'])->name('comentarios.store');
+Route::post('/comentario/{evento:id}',[ComentarioController::class,'store'])->name('comentarios.store');
 Route::post('/comentario/{comentario}',[ ComentarioController::class,'update'])->name('comentarios.validate');
 Route::delete('/comentario/{comentario}',[ ComentarioController::class,'destroy'])->name('comentarios.destroy');
 
@@ -53,10 +53,12 @@ Route::get('/eventos/registrar', [EventosController::class,'create'])->name('eve
 Route::post('/eventos/registrar', [EventosController::class,'store']);
 Route::get('/eventos/{evento}/edit',[ EventosController::class,'edit'])->name('eventos.edit');
 Route::post('/eventos/{evento}/edit',[ EventosController::class,'update']);
-Route::delete('/eventos/{publication}',[ EventosController::class,'destroy'])->name('eventos.destroy');
+Route::get('/eventos/{evento:id}',[EventosController::class,'show'])->name('evento.show');
 
+
+// Inscripción
+Route::get('/eventos/{evento}/inscripcion', [EventosController::class,'create'])->name('inscripcion.create');
 //Catalogo
 Route::get('/catalogo', [EventosController::class,'index'])->name('eventos.catalogue');
-Route::get('/catalogo/{publication:name}',[EventosController::class,'show'])->name('evento.show');
 
 

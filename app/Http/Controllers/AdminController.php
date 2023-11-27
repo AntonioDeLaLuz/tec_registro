@@ -51,7 +51,7 @@ class AdminController extends Controller
 
     public function adminComentarios()
     {
-        $comentarios = DB::table('comentarios')->join('users', 'users.id', '=', 'comentarios.user_id')->join('publications', 'publications.id', '=', 'comentarios.publications_id')->select('comentarios.id', 'users.name', 'users.lastnameP', 'users.lastnameM', 'comentarios.comentario', 'publications.name as publication_name')->where('validacion', 0)->orderBy('id', 'asc')->get();
+        $comentarios = DB::table('comentarios')->join('users', 'users.id', '=', 'comentarios.user_id')->join('eventos', 'eventos.id', '=', 'comentarios.evento_id')->select('comentarios.id', 'users.name', 'users.lastnameP', 'users.lastnameM', 'comentarios.comentario', 'eventos.title as eventos_title')->where('validacion', 0)->orderBy('id', 'asc')->get();
         return view('admin.comentarios', ['comentarios' => $comentarios]);
     }
 

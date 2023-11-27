@@ -57,7 +57,15 @@
             cancelButtonText: 'Cancelar',
             confirmButtonText: 'Si, eliminar!'
         }).then((result) => {
-           
+            if (result.isConfirmed) {
+                    // Eliminar Vacante
+                    Livewire.emit('eliminarEvento',evento_id);
+                    Swal.fire(
+                        'Se ha Eliminado el evento',
+                        'Eliminado correctamente',
+                        'success'
+                    )
+                }
         });
     });
 </script>

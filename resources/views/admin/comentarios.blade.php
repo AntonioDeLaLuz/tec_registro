@@ -30,7 +30,7 @@ Gestión de comentarios
         <tr>
             <td class="text-center">{{$contador++ }}</td>
             <td class="text-center">{{$comentario->name . " " . $comentario->lastnameP . " " . $comentario->lastnameM}}</td>
-            <td class="text-center">{{$comentario->publication_name}}</td>
+            <td class="text-center">{{$comentario->eventos_title}}</td>
             <td class="text-center">{{$comentario->comentario}}</td>
             <td>
                 <div class="grid grid-cols-2 place-items-center">
@@ -41,7 +41,6 @@ Gestión de comentarios
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-
                             <input type="submit" value="Validar" class="bg-green-500 hover:bg-green-600 cursor-pointer text-center p-2 text-white font-bold ">
 
                         </div>
