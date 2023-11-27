@@ -1,20 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<<<<<<< HEAD
-=======
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@yield('title')</title>
-        {{-- Barra de estilos --}}
-        @stack('styles')
-        <link rel="stylesheet" href="{{ asset('build/assets/app.b4cd5882.css') }}">
-        <link rel="shortcut icon" href="{{ asset('img/favicon/Logocolorabeja_peque.ico') }}" type="image/x-icon">
-        {{-- archivos js --}}
-        <script src="{{ asset('build/assets/app.46046821.js') }}" defer></script>
-        {{-- Agrega estilos de live --}}
-        @livewireStyles
->>>>>>> 2d65ffa3ce8cfa57b2ced6c9fe965a3f90ae2e0e
 
 <head>
     <meta charset="utf-8">
@@ -22,8 +7,8 @@
     <title>@yield('title')</title>
     {{-- Barra de estilos --}}
     @stack('styles')
-    <link rel="stylesheet" href="{{ asset('build/assets/app.5bdbe1ca.css') }}">
-    <link rel="shortcut icon" href="{{ asset('img/favicon/Logocolorabeja_peque.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('build/assets/app.5a939405.css') }}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon/') }}" type="image/x-icon">
     {{-- archivos js --}}
     <script src="{{ asset('build/assets/app.46046821.js') }}" defer></script>
     {{-- Agrega estilos de live --}}
@@ -33,7 +18,6 @@
 
 <body class="bg-white    flex flex-col justify-between">
     <header class="p-5  bg-primario shadow">
-
         <!-- navbar-->
         <nav class="flex justify-center gap-6">
             <a href="{{ route('index') }}"
@@ -44,7 +28,7 @@
                         d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>Inicio</a>
 
-            <a href="{{ route('publications.catalogue') }}"
+            <a href="{{ route('eventos.catalogue') }}"
                 class="text-center text-white font-bold text-3xl no-underline flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-8 h-8">
@@ -93,7 +77,6 @@
 
     </header>
     <main class="">
-
         @yield('contenido')
     </main>
     
@@ -116,26 +99,6 @@
                 </div>
             </div>
             <div class="col-span-2">
-                <h3 class=" text-white mb-3 text-2xl font-bold text-center  my-2">Redes sociales</h3>
-                <div class="grid grid-cols-3 gap-4">
-                    <div class="bg-BlancoBTN  px-3 py-2 rounded-xl ">
-                        <img src="{{ asset('img/logoFacebook-removebg-preview (1).png') }}" class="w-8 h-8 mx-auto"
-                            alt="">
-                    </div>
-                    <div class="bg-BlancoBTN  px-5 py-3 rounded-xl">
-                        <img src="{{ asset('img/insta.png') }}" class="w-8 h-8 mx-auto" alt="">
-                    </div>
-                    <div class="bg-BlancoBTN  px-5 py-3 rounded-xl">
-                        <img src="{{ asset('img/whats.png') }}" class="w-8 h-8 mx-auto" alt="">
-                    </div>
-<<<<<<< HEAD
-=======
-                    <div class="py-3 px-0">
-                        <p </p>
-                    </div>
-                    <img class="h- 25 mx-auto" src="{{ asset('img/Logo_itsx_blanco_peque.png') }}" alt="">
->>>>>>> 2d65ffa3ce8cfa57b2ced6c9fe965a3f90ae2e0e
-                </div>
             </div>
         </div>
 

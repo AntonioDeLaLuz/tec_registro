@@ -61,9 +61,7 @@
                         </div>
                         <div class="mt-6">
                             <h1 class="text-center text-2xl uppercase my-2 text-white font-semibold">{{$p->name}}</h1>
-                            <div class="grid place-items-center mt-4">
-                                <a href="{{ route('publications.show',['publication'=>$p->name]) }}" class="bg-BotonesVerMas inline-block  mt-4 text-2xl font-semibold text-white py-2 px-3 rounded-sm ">Ver más</a>
-                            </div>
+                            
                         </div>
                     </div>
                     @endforeach

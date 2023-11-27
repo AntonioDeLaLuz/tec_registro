@@ -8,10 +8,7 @@ Inscripciones
     <div class="flex justify-between my-8">
         <a href="{{ route('admin.index') }}" class="bg-BotonesVolver uppercase font-boldborder-none text-white py-6 px-10 mx-auto inline-block shadow-sm rounded-xl cursor-pointer">Volver</a>
     </div>
-    @if($registers_event->count()<=0)
-    <p class="text-center font-semibold my-4 uppercase">No hay inscripciones</p>
-    @else
-    <table class="w-full">
+        <table class="w-full">
         <thead class="bg-primario ">
         <tr>
             <th class="uppercase text-white p-2">Número</th>

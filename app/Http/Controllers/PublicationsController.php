@@ -72,6 +72,5 @@ class PublicationsController extends Controller{
         return redirect()->route('admin.publications',['publications'=>$publications]);;
         //  return view('admin.publications',['publications'=>$publications]);
             // return back()->with('mensaje','Publications actualizada correctamente');
-
      }
 }

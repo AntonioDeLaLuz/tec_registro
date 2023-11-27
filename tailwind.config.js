@@ -21,6 +21,10 @@ module.exports = {
         'BlancoBTN': '#FFFFFF', // color de fondo de los iconos de redes en el home
         'TituloSecciones': '#000000', // color titulo secciones principales publicaciones,administracion,ect.
         'Line': '#807E82', // Linea de las tablas
+
+        'cPrimario':'#00243b',
+        'cSecundario':'#dbc613',
+        'cTerciario': '#807E82',
       },
     },
   },

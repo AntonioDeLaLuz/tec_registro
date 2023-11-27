@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Posts;
 use App\Models\Publications;
 use App\Models\Comentario;
+use App\Models\Evento;
 use App\Models\RegisterEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,10 +31,10 @@ class AdminController extends Controller
         return view('admin.posts', ['posts' => $posts]);
     }
 
-    public function adminPublications()
+    public function adminEventos()
     {
-        $publications = Publications::all();
-        return view('admin.publications', ['publications' => $publications]);
+        $eventos = Evento::all();
+        return view('admin.eventos', ['eventos' => $eventos]);
     }
 
     public function adminUsers()
@@ -41,12 +42,6 @@ class AdminController extends Controller
         $users = User::all();
         return view('admin.usuarios', ['users' => $users]);
     }
-
-//    public function adminUsersEvent()
-//    {
-//        $usersEvent = RegisterEvent::all();
-//        return view('admin.usuariosEvent', ['usersEvent' => $usersEvent]);
-//    }
 
     public function adminRegisterEvent()
     {

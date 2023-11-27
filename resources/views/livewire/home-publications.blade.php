@@ -13,7 +13,7 @@
                 <div class=" p-4 grid items-center">
                     <p class="font-bold text-primario uppercase text-center">{{ $publication->name }}</p>
                     <p class="font-bold text-gray-500 capitalize text-center"><em> {{ $publication->sub_title }}</em></p>
-                    <a class="font-semibold cursor-pointer text-center uppercase  bg-BotonesVerMas px-3 py-2 rounded-xl" href="{{ route('publications.show', $publication->name) }}">Ver más</a>
+                    <a class="font-semibold cursor-pointer text-center uppercase  bg-BotonesVerMas px-3 py-2 rounded-xl">Ver más</a>
                 </div>
             </div>
             @empty

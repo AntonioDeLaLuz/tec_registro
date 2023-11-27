@@ -9,9 +9,9 @@ Panel de administración
     <div class="container mx-auto grid md:grid-cols-2 gap-3 items-center">
         <h1 class="text-4xl uppercase text-white mb-5 ">Seleccione la opción deseada:</h3>
             <div class="mx-3">
-                <a href="{{ route('admin.publications') }}" class="block my-5">
+                <a href="{{ route('admin.eventos') }}" class="block my-5">
                     <div class="bg-PanelAdministracionBTN  px-4 py-6">
-                        <p class="text-3xl text-center text-white uppercase m-0">Publicaciones</p>
+                        <p class="text-3xl text-center text-white uppercase m-0">Eventos</p>
                     </div>
                 </a>
                 <a href="{{ route('admin.users') }}" class="block mb-5 ">
@@ -19,7 +19,7 @@ Panel de administración
                         <p class="text-3xl text-center text-white uppercase m-0">Usuarios</p>
                     </div>
                 </a>
-                <a href="{{ route('admin.registerEvent') }}" class="block mb-5 ">
+                <a href="" class="block mb-5 ">
                     <div class="bg-PanelAdministracionBTN px-4 py-6">
                         <p class="text-3xl text-center text-white uppercase m-0">Inscripciones</p>
                     </div>

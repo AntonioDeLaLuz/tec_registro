@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('title')
-    Editar publicación
+    Editar Evento
 @endsection
 
 @push('styles')
@@ -11,20 +11,20 @@
     <h1 class="text-center font-bold uppercase text-4xl mb-4 text-primario">Editar  publicación</h1>
     
         <div class="grid md:grid-cols-2">
-            <form action="{{ route('publications.edit',$publication)}}" method="POST" autocomplete="off">
+            <form action="{{ route('eventos.edit',$evento)}}" method="POST" autocomplete="off">
                 @csrf
                 <div class="p-4">
                     <div class="grid md:grid-cols-2 mt-6 gap-4">
                         <div class="mb-5">
-                            <label class="font-bold text-primario uppercase mb-4 block" for="name">Titulo:</label>
-                            <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('name') border-red-500 @enderror " type="text" id="name" name="name" placeholder="Ingrese el titulo de la publicación" value="{{$publication->name}}">
-                            @error('name')
+                            <label class="font-bold text-primario uppercase mb-4 block" for="title">Titulo:</label>
+                            <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('title') border-red-500 @enderror " type="text" id="title" name="title" placeholder="Ingrese el titulo de la publicación" value="{{$evento->title}}">
+                            @error('title')
                             <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                             @enderror
                         </div>
                         <div class="mb-5">
-                            <label class="font-bold text-primario uppercase mb-4 block" for="sub_title">Sub-titulo:</label>
-                            <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('sub_title') border-red-500 @enderror" type="text" id="sub_title" name="sub_title" placeholder="Ingrese el sub-titulo de la publicación" value="{{$publication->sub_title}}">
+                            <label class="font-bold text-primario uppercase mb-4 block" for="sub_title">Subtitulo:</label>
+                            <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('sub_title') border-red-500 @enderror" type="text" id="sub_title" name="sub_title" placeholder="Ingrese el sub-titulo de la publicación" value="{{$evento->sub_title}}">
                             @error('sub_title')
                             <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                             @enderror
@@ -32,22 +32,23 @@
                     </div>
 
                     <div class="mb-5">
+                        <label class="font-bold text-primario uppercase mb-4 block" for="author">Por definir si va un autor:</label>
+                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('author') border-red-500 @enderror " id="author" name="author">{{$evento->author}}</textarea>
+                        @error('author')
+                        <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="mb-5">
                         <label class="font-bold text-primario uppercase mb-4 block" for="descripcion">Descripción:</label>
-                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('descripcion') border-red-500 @enderror" id="descripcion" name="descripcion">{{$publication->descripcion}}</textarea>
+                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('descripcion') border-red-500 @enderror" id="descripcion" name="descripcion">{{$evento->descripcion}}</textarea>
                         @error('descripcion')
                         <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                         @enderror
                     </div>
-                    <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="formas_uso">Por definir si va un autor:</label>
-                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('formas_uso') border-red-500 @enderror " id="formas_uso" name="formas_uso">{{$publication->formas_uso}}</textarea>
-                        @error('formas_uso')
-                        <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
-                    @enderror
-                    </div>
 
                     <div class="mb-5">
-                        <input type="hidden" name="urlimg" value="{{$publication->urlimg}}">
+                        <input type="hidden" name="urlimg" value="{{$evento->urlimg}}">
                         @error('urlimg')
                         <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                         @enderror
@@ -60,7 +61,7 @@
             <div>
                 <div>
                     <label class="font-bold text-primario uppercase mb-4 block" for="usos">Imagen actual</label>
-                    <img src="{{ asset('uploads/'.$publication->urlimg ) }}" alt="{{$publication->name }}">
+                    <img src="{{ asset('uploads/'.$evento->urlimg ) }}" alt="{{$evento->title }}">
                 </div>
                 <label class="font-bold text-primario uppercase mb-4 block" for="usos">Arrastre o selecione una nueva imagen en el recuadro siguiente para actualizarla</label>
                 <form action="{{ route('image.store') }}" method="POST" id="dropzone" enctype="multipart/form-data" class="border-dashed border-2 h-96 rounded flex flex-col justify-center items-center">

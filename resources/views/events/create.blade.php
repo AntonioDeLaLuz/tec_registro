@@ -11,19 +11,19 @@
     <h1 class="text-center font-bold uppercase text-4xl mb-4 text-primario">Registrar una publicación</h1>
     
         <div class="grid md:grid-cols-2 container mx-auto">
-            <form action="{{ route('publications.create') }}" method="POST" autocomplete="off">
+            <form action="{{ route('eventos.create') }}" method="POST" autocomplete="off">
                 @csrf
                 <div class="p-4">
                     <div class="grid md:grid-cols-2 mt-6 gap-4">
                         <div class="mb-5">
-                            <label class="font-bold text-primario uppercase mb-4 block" for="name">Titulo:</label>
-                            <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('name') border-red-500 @enderror " type="text" id="name" name="name" placeholder="Ingrese el titulo de la publicación" value="{{old('name')}}">
-                            @error('name')
+                            <label class="font-bold text-primario uppercase mb-4 block" for="title">Titulo:</label>
+                            <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('title') border-red-500 @enderror " type="text" id="title" name="title" placeholder="Ingrese el titulo de la publicación" value="{{old('title')}}">
+                            @error('title')
                             <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                             @enderror
                         </div>
                         <div class="mb-5">
-                            <label class="font-bold text-primario uppercase mb-4 block" for="sub_title">sub-titulo:</label>
+                            <label class="font-bold text-primario uppercase mb-4 block" for="sub_title">Subtitulo:</label>
                             <input class="border-primario-100 px-4 py-2 block w-full shadow-md rounded-sm @error('sub_title') border-red-500 @enderror" type="text" id="sub_title" name="sub_title" placeholder="Ingrese el sub-titulo de la publicación" value="{{old('sub_title')}}">
                             @error('sub_title')
                             <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
@@ -32,9 +32,9 @@
                     </div>
 
                     <div class="mb-5">
-                        <label class="font-bold text-primario uppercase mb-4 block" for="formas_uso">Por definir si va un autor:</label>
-                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('formas_uso') border-red-500 @enderror " id="formas_uso" name="formas_uso">{{old('formas_uso')}}</textarea>
-                        @error('formas_uso')
+                        <label class="font-bold text-primario uppercase mb-4 block" for="author">Por definir si va un autor:</label>
+                        <textarea class=" px-4 py-2 block w-full shadow-md rounded-sm  @error('author') border-red-500 @enderror " id="author" name="author">{{old('author')}}</textarea>
+                        @error('author')
                         <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                         @enderror
                     </div>

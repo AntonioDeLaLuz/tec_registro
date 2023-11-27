@@ -12,48 +12,22 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PublicationsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('index');
-// })->name('index');
+use App\Http\Controllers\EventosController;
 
 // Index
 Route::get('/', [AppController::class,'index'])->name('index');
-
-// Carrusel
-Route::get('/carrusel/carrusel', [AppController::class, 'indexForCarrusel'])->name('carrusel.carrusel');
+Route::get('/eventos', [AppController::class,'appEventos'])->name('pages.eventos');
 
 // Imagenes
 Route::post('/imagenes', [ImagenController::class,'store'])->name('image.store');
 
-// Colaboradores
-Route::get('/colaboradores', [PostsController::class,'index'])->name('posts.catalogue');
-Route::get('/colaboradores/registrar-colaborador', [PostsController::class,'create'])->name('posts.create');
-Route::post('/colaboradores/registrar-colaborador', [PostsController::class,'store']);
-Route::get('/colaboradores/{post:title}',[PostsController::class,'show'])->name('posts.show');
-Route::get('/colaboradores/{post}/edit',[ PostsController::class,'edit'])->name('posts.edit');
-Route::post('/colaboradores/{post}/edit',[ PostsController::class,'update']);
-Route::delete('/colaboradores/{post}',[ PostsController::class,'destroy'])->name('posts.destroy');
-
 // Admin
 Route::get('/administracion', [AdminController::class,'index'])->name('admin.index');
-Route::get('/administracion/publications', [AdminController::class,'adminPublications'])->name('admin.publications');
-Route::get('/administracion/colaboradores', [AdminController::class,'adminPosts'])->name('admin.posts');
+Route::get('/administracion/eventos', [AdminController::class,'adminEventos'])->name('admin.eventos');
 Route::get('/administracion/comentarios', [AdminController::class,'adminComentarios'])->name('admin.comentarios');
 Route::get('/administracion/usuarios', [AdminController::class,'adminUsers'])->name('admin.users');
 Route::get('/administracion/registerEvent', [AdminController::class,'adminRegisterEvent'])->name('admin.registerEvent');
+Route::get('/administracion/colaboradores', [AdminController::class,'adminPosts'])->name('admin.posts');
 
 // Login
 Route::get('/iniciar-sesion',[LoginController::class,'index'])->name('register.login');
@@ -64,20 +38,6 @@ Route::post('/cerrar-sesion',[LogoutController::class,'store'])->name('register.
 Route::get('/crear-usuario',[ RegisterController::class,'create'])->name('register.create');
 Route::post('/crear-usuario',[ RegisterController::class,'store']);
 
-// UsuariosEvent
-Route::get('/crear-usuarioEvent',[ RegisterEventController::class,'create'])->name('registerEvent.create');
-Route::post('/crear-usuarioEvent',[ RegisterEventController::class,'store']);
-
-// Catalogo
-Route::get('/catalogo', [PublicationsController::class,'index'])->name('publications.catalogue');
-
-//Publicaciones
-Route::get('/publications/registrar-publication', [PublicationsController::class,'create'])->name('publications.create');
-Route::post('/publications/registrar-publication', [PublicationsController::class,'store']);
-Route::get('/publications/{publication}/edit',[ PublicationsController::class,'edit'])->name('publications.edit');
-Route::post('/publications/{publication}/edit',[ PublicationsController::class,'update']);
-Route::delete('/publications/{publication}',[ PublicationsController::class,'destroy'])->name('publications.destroy');
-Route::get('/catalogo/{publication:name}',[PublicationsController::class,'show'])->name('publications.show');
 
 // Comentarios
 Route::post('/comentario/{publication:name}',[ComentarioController::class,'store'])->name('comentarios.store');
@@ -88,7 +48,15 @@ Route::delete('/comentario/{comentario}',[ ComentarioController::class,'destroy'
 Route::post('/publications/{publication}/likes',[LikeController::class,'store'])->name('publications.likes.store');
 Route::delete('/publications/{publication}/likes',[LikeController::class,'destroy'])->name('publications.likes.destroy');
 
-// Registro de evento
-Route::post('/register/{publication:name}',[RegisterEventController::class,'store'])->name('register.store');
-Route::post('/register/{register}',[ RegisterEventController::class,'update'])->name('register.validate');
-Route::delete('/register/{register}',[ RegisterEventController::class,'destroy'])->name('register.destroy');
+//Eventos
+Route::get('/eventos/registrar', [EventosController::class,'create'])->name('eventos.create');
+Route::post('/eventos/registrar', [EventosController::class,'store']);
+Route::get('/eventos/{evento}/edit',[ EventosController::class,'edit'])->name('eventos.edit');
+Route::post('/eventos/{evento}/edit',[ EventosController::class,'update']);
+Route::delete('/eventos/{publication}',[ EventosController::class,'destroy'])->name('eventos.destroy');
+
+//Catalogo
+Route::get('/catalogo', [EventosController::class,'index'])->name('eventos.catalogue');
+Route::get('/catalogo/{publication:name}',[EventosController::class,'show'])->name('evento.show');
+
+
