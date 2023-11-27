@@ -1,4 +1,3 @@
-{{dd($publication)}}
 @extends('layout.app')
 @section('title')
     Crear evento
