@@ -43,6 +43,16 @@ Route::get('/administracion/comentarios', [AdminController::class,'adminComentar
 Route::get('/administracion/usuarios', [AdminController::class,'adminUsers'])->name('admin.users');
 Route::get('/administracion/registerEvent', [AdminController::class,'adminRegisterEvent'])->name('admin.registerEvent');
 
+// Colaboradores
+Route::get('/colaboradores', [PostsController::class,'index'])->name('posts.catalogue');
+Route::get('/colaboradores/registrar-colaborador', [PostsController::class,'create'])->name('posts.create');
+Route::post('/colaboradores/registrar-colaborador', [PostsController::class,'store']);
+Route::get('/colaboradores/{post:title}',[PostsController::class,'show'])->name('posts.show');
+Route::get('/colaboradores/{post}/edit',[ PostsController::class,'edit'])->name('posts.edit');
+Route::post('/colaboradores/{post}/edit',[ PostsController::class,'update']);
+Route::delete('/colaboradores/{post}',[ PostsController::class,'destroy'])->name('posts.destroy');
+
+
 // Login
 Route::get('/iniciar-sesion',[LoginController::class,'index'])->name('register.login');
 Route::post('/iniciar-sesion',[LoginController::class,'store']);
@@ -73,5 +83,7 @@ Route::post('/publications/{publication}/likes',[LikeController::class,'store'])
 Route::delete('/publications/{publication}/likes',[LikeController::class,'destroy'])->name('publications.likes.destroy');
 
 // Registro de evento
-Route::post('/register_event/{publication:name}',[RegisterEventController::class,'store'])->name('register.store');
+Route::post('/register_event/confirm_asistencia',[RegisterEventController::class,'store'])->name('register.store');
+Route::get('/register_event/confirm_asistencia/{publication:id}',[RegisterEventController::class,'prueba'])->name('register.index');
+Route::post('/register_event/{register_event}',[ ComentarioController::class,'update'])->name('register.validate');
 Route::delete('/register_event/{register_event}',[ RegisterEventController::class,'destroy'])->name('register.destroy');

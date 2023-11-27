@@ -81,29 +81,10 @@
 <!--                <h2 class="uppercase  text-primario text-5xl">Inscripciones</h2>-->
                 {{-- Agregar inscripcion --}}
                 @auth
-                <div class="shadow bg-white p-5 mb-5">
-                    <h2 class="uppercase  text-primario text-3xl text-center mb-4">Inscripciones</h2>
-                    @if (session('mensaje'))
-                    <div class="bg-green-400 p-2 rounded-md mb-5">
-                        <p class="text-center uppercase font-semibold">{{ session('mensaje') }}</p>
-                    </div>
-                    @endif
-                    <form action=" {{ route('register.store', ['publication' => $publication]) }} " method="post">
-                        @csrf
-                        <div class="mb-5">
-<!--                            <label class="font-bold text-primario uppercase mb-4 block" for="comentario">Inscripciones abiertas</label>-->
-                            @error('comentario')
-                            <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{ $message }}
-                            </p>
-                            @enderror
-                        </div>
-                        <input type="hidden" value="0" name="validacion">
                         <div class="grid items-center">
-                            <input type="submit" value="Inscribete"
-                                   class="uppercase bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-xl rounded-3xl mb-4 hover:cursor-pointer">
+                            <a href="{{route('register.index',['publication'=>$publication->id])}}"
+                               class="uppercase bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-xl rounded-3xl mb-4 hover:cursor-pointer">Incribete</a>
                         </div>
-                    </form>
-                </div>
                 @endauth
             </div>
             {{-- Agregar comentarios --}}

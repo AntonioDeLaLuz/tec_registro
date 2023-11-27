@@ -13,11 +13,29 @@ class Publications extends Model
         'name',
         'sub_title',
         'formas_uso',
-        'distribucion',
         'descripcion',
-        'usos',
-        'activos',  
         'urlimg'  
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at',
     ];
 
     // Obtener los comentarios

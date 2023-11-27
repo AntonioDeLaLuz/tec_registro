@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
-class RegisterEvent extends Authenticatable
+class PublicationEvent extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -39,15 +39,12 @@ class RegisterEvent extends Authenticatable
         'lider',
         'instituto',
         'grado',
-        'companion',
         'colaborador_1',
         'colaborador_2',
         'colaborador_3',
         'colaborador_4',
         'colaborador_5',
         'colaborador_6',
-        'solicitud_equipo',
-        'tematica',
     ];
 
     /**
@@ -59,7 +56,6 @@ class RegisterEvent extends Authenticatable
     protected $hidden = [
         'created_at',
         'updated_at',
-        'delete_at',
     ];
 
     /**
@@ -70,7 +66,6 @@ class RegisterEvent extends Authenticatable
     protected $dates = [
         'created_at',
         'updated_at',
-        'delete_at',
     ];
 
     /**

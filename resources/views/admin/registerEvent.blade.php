@@ -1,4 +1,4 @@
-{{dd($registers_event)}}
+
 @extends('layout.app')
 @section('title')
 Inscripciones
@@ -9,9 +9,9 @@ Inscripciones
     <div class="flex justify-between my-8">
         <a href="{{ route('admin.index') }}" class="bg-BotonesVolver uppercase font-boldborder-none text-white py-6 px-10 mx-auto inline-block shadow-sm rounded-xl cursor-pointer"> Volver</a>
     </div>
-
+    @if($registers_event->count()<=0)
     <p class="text-center font-semibold my-4 uppercase">No hay inscripciones</p>
-
+    @else
     <table class="w-full">
         <thead class="bg-primario ">
         <tr>
@@ -33,7 +33,7 @@ Inscripciones
             <td>
                 <div class="grid grid-cols-2 place-items-center">
                     {{-- Validar --}}
-                    <form action="{{ route('comentarios.validate',$register_event->id)}}" method="POST" >
+                    <form action="{{ route('register.validate',$register_event->id)}}" method="POST" >
                         @csrf
                         <div class="flex place-items-center bg-green-500 p-2 rounded-xl hover:bg-green-600">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -45,7 +45,7 @@ Inscripciones
                         </div>
                     </form>
                     {{-- Eliminar --}}
-                    <form action="{{ route('comentarios.destroy', $register_event->id) }}" method="POST" >
+                    <form action="{{ route('register.destroy', $register_event->id) }}" method="POST" >
                         @method('DELETE')
                         @csrf
                         <div class="flex place-items-center bg-red-500 p-2 rounded-xl hover:bg-red-700 ">
@@ -60,7 +60,7 @@ Inscripciones
             </td>
         </tr>
         @endforeach
-
+        @endif
         </tbody>
     </table>
 </div>
