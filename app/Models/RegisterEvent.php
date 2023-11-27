@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
 class RegisterEvent extends Authenticatable
 {
@@ -32,18 +33,21 @@ class RegisterEvent extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',
+        'users_id',
         'publications_id',
         'nombreCA',
         'lider',
         'instituto',
         'grado',
+        'companion',
         'colaborador_1',
         'colaborador_2',
         'colaborador_3',
         'colaborador_4',
         'colaborador_5',
         'colaborador_6',
+        'solicitud_equipo',
+        'tematica',
     ];
 
     /**
@@ -55,7 +59,7 @@ class RegisterEvent extends Authenticatable
     protected $hidden = [
         'created_at',
         'updated_at',
-        'deleted_at'
+        'delete_at',
     ];
 
     /**
@@ -66,7 +70,7 @@ class RegisterEvent extends Authenticatable
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at'
+        'delete_at',
     ];
 
     /**
@@ -78,8 +82,4 @@ class RegisterEvent extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function likes(){
-        // Extraer todos los likes
-        return $this->hasMany(Like::class);
-    }
 }

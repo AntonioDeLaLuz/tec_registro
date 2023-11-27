@@ -38,7 +38,6 @@ Route::post('/cerrar-sesion',[LogoutController::class,'store'])->name('register.
 Route::get('/crear-usuario',[ RegisterController::class,'create'])->name('register.create');
 Route::post('/crear-usuario',[ RegisterController::class,'store']);
 
-
 // Comentarios
 Route::post('/comentario/{evento:id}',[ComentarioController::class,'store'])->name('comentarios.store');
 Route::post('/comentario/{comentario}',[ ComentarioController::class,'update'])->name('comentarios.validate');

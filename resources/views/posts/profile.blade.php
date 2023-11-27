@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('title')
-    {{$post->title}} -Jardín Viva
+    {{$post->title}} Tec Registra
 @endsection
 @section('contenido')
   <p>{{$post->title}}</p>
