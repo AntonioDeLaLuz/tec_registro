@@ -20,20 +20,20 @@ class RegisterEventController extends Controller
             'lider'=>['required','min:5','max:100'],
             'instituto'=>['required'],
             'grado'=>['required'],
-            'companion'=>['min:5','max:100'],
+            'companion'=>['max:100'],
             'colaborador_1'=>['max:100'],
             'colaborador_2'=>['max:100'],
             'colaborador_3'=>['max:100'],
             'colaborador_4'=>['max:100'],
             'colaborador_5'=>['max:100'],
             'colaborador_6'=>['max:100'],
-            'solicitud_equipo'=>['min:5','max:100'],
+            'solicitud_equipo'=>['max:200'],
             'tematica'=>['required','min:5','max:100']
         ]);
 
         // dd('creando registro evento');
         RegisterEvent::create([
-            'user_id' => auth()->user()->id,
+            'users_id' => auth()->user()->id,
             'publications_id' => $publication->id,
             'nombreCA'=>$request->nombreCA,
             'lider'=>$request->lider,
@@ -50,7 +50,7 @@ class RegisterEventController extends Controller
             'tematica'=>$request->tematica
         ]);
         //  regresar a la pagina anterior
-        return view('publications.profile',['publication'=>$publication]);
+        return view('publications.profile',['publication'=>$publication->id]);
     }
     public function destroy(RegisterEvent $register_event){
         $register_event->delete();

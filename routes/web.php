@@ -83,7 +83,7 @@ Route::post('/publications/{publication}/likes',[LikeController::class,'store'])
 Route::delete('/publications/{publication}/likes',[LikeController::class,'destroy'])->name('publications.likes.destroy');
 
 // Registro de evento
-Route::post('/register_event/confirm_asistencia',[RegisterEventController::class,'store'])->name('register.store');
+Route::post('/register_event/confirm_asistencia/{publication:id}',[RegisterEventController::class,'store'])->name('register.store');
 Route::get('/register_event/confirm_asistencia/{publication:id}',[RegisterEventController::class,'prueba'])->name('register.index');
 Route::post('/register_event/{register_event}',[ RegisterEventController::class,'update'])->name('register.validate');
 Route::delete('/register_event/{register_event}',[ RegisterEventController::class,'destroy'])->name('register.destroy');

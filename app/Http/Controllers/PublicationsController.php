@@ -44,7 +44,7 @@ class PublicationsController extends Controller{
     }
     public function destroy( Publications $publication){
         $publication->update([
-            'delete_at' => now(), // Usa la función now() para obtener la fecha y hora actuales
+            'deleted_at' => now(), // Usa la función now() para obtener la fecha y hora actuales
         ]);
         $publications=Publications::all();
         return redirect()->route('admin.publications',['publications'=>$publications]);

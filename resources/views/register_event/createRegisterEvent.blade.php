@@ -1,12 +1,12 @@
 @extends('layout.app')
 @section('title')
-    Crear evento
+    Crear registro evento
 @endsection
 @section('contenido')
 <h3 class="bg-titulo px-12 py-6 mt-5 text-white font-bold uppercase text-4xl mx-auto inline-block">Crear registro </h3>
 
 <div class="grid md:grid-cols-2 container px-10 py-3 mx-auto">
-    <form action="{{ route('register.store') }}" method="POST" autocomplete="off">
+    <form action="{{ route('register.store',['publication'=>$publication->id]) }}" method="POST" autocomplete="off">
         @csrf
         <div class="p-4">
             <div class="mb-5">
@@ -110,11 +110,6 @@
                 @enderror
             </div>
 
-
-            <div class="mb-5">
-                
-                <input type="hidden" name="type" value="3">
-            </div>
         </div>
         <div class="grid items-center">
             <input type="submit" value="Registrar inscripción" class="uppercase font-bold bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-sm rounded-xl cursor-pointer">
@@ -122,8 +117,6 @@
     </form>
     <div>
         <img src="{{ asset('img/Logo_itsx_color.png') }}" alt="Logo" class="max-h-30">
-    </div>
-    <div>
         <img src="{{ asset('img/Logo_itsx_color.png') }}" alt="Logo" class="max-h-30">
     </div>
 </div>

@@ -26,6 +26,7 @@ class Publications extends Model
     protected $hidden = [
         'created_at',
         'updated_at',
+        'deleted_at',
     ];
 
     /**
@@ -36,6 +37,7 @@ class Publications extends Model
     protected $dates = [
         'created_at',
         'updated_at',
+        'deleted_at',
     ];
 
     // Obtener los comentarios

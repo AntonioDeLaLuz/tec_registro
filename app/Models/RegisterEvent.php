@@ -33,7 +33,7 @@ class RegisterEvent extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',
+        'users_id',
         'publications_id',
         'nombreCA',
         'lider',

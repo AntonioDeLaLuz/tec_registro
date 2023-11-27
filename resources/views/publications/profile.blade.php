@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('title')
-    {{ $publication->name }} -Jardín Viva
+    {{ $publication->name }} Tec Registra
 @endsection
 @section('contenido')
     <div class="grid md:grid-cols-3 gap-10 container mx-auto">
