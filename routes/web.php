@@ -1,15 +1,13 @@
 <?php
 
-use App\Http\Controllers\RegisterEventController;
+use App\Http\Controllers\InscripcionsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\PublicationsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\EventosController;
@@ -26,7 +24,6 @@ Route::get('/administracion', [AdminController::class,'index'])->name('admin.ind
 Route::get('/administracion/eventos', [AdminController::class,'adminEventos'])->name('admin.eventos');
 Route::get('/administracion/comentarios', [AdminController::class,'adminComentarios'])->name('admin.comentarios');
 Route::get('/administracion/usuarios', [AdminController::class,'adminUsers'])->name('admin.users');
-Route::get('/administracion/registerEvent', [AdminController::class,'adminRegisterEvent'])->name('admin.registerEvent');
 Route::get('/administracion/colaboradores', [AdminController::class,'adminPosts'])->name('admin.posts');
 
 // Login
@@ -55,8 +52,8 @@ Route::post('/eventos/{evento}/edit',[ EventosController::class,'update']);
 Route::get('/eventos/{evento:id}',[EventosController::class,'show'])->name('evento.show');
 
 
-// Inscripción
-Route::get('/eventos/{evento}/inscripcion', [EventosController::class,'create'])->name('inscripcion.create');
+// Incripciones
+Route::get('/eventos/{evento:name}/inscripcion',[InscripcionsController::class,'index'])->name('inscripcion.create');
 //Catalogo
 Route::get('/catalogo', [EventosController::class,'index'])->name('eventos.catalogue');
 

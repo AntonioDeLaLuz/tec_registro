@@ -10,7 +10,7 @@
 @section('contenido')
     <h1 class="text-center font-bold uppercase text-4xl mb-4 text-primario">Registrar una publicación</h1>
     
-        <div class="grid md:grid-cols-2 container mx-auto">
+        <div class="grid md:grid-cols-2 container mx-auto w-10/12">
             <form action="{{ route('eventos.create') }}" method="POST" autocomplete="off">
                 @csrf
                 <div class="p-4">
