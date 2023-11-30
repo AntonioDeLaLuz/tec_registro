@@ -1,3 +1,7 @@
+// Importar funciones 
+const menu = require('./menu');
+
+// Dropzone
 import Dropzone from "dropzone";
 
 // No buscar elemento con esa clase
@@ -5,7 +9,8 @@ Dropzone.autoDiscover=false;
 
 window.addEventListener("DOMContentLoaded",()=>{
     drop();
-   swi();
+    swi();
+    menu.MenuDesplegable();
 })
 function drop(){
     if(document.querySelector('#dropzone')){
@@ -33,6 +38,8 @@ function drop(){
         })
     }
 }
+
+// Swiper
 function swi(){
     if(document.querySelector('.slider__contenedor')){
         window.swiper = new Swiper({

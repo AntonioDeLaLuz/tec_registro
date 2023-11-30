@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('inscripcions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('evento_id')->constrained()->onDelete('cascade');
-            $table->date('fecha_inscripcion',255)->nullable();
+        Schema::table('eventos', function (Blueprint $table) {
+            //
+            $table->date('fecha_evento',255)->nullable();
         });
     }
 
@@ -29,6 +26,10 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inscripcions');
+        Schema::table('eventos', function (Blueprint $table) {
+            //
+            $table->dropColumn('fecha_evento');
+
+        });
     }
 };

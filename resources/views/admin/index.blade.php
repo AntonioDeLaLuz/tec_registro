@@ -4,7 +4,7 @@
 @endsection
 
 @section('contenido')
-    <h1 class="bg-titulo px-12 py-6 mt-5 text-cPrimario font-bold uppercase text-4xl text-center">Panel de
+    <h1 class="bg-titulo px-12 py-6 mt-5 text-cPrimario font-bold  text-4xl text-center">Panel de
         administración </h1>
         <div class="mx-auto container w-10/12">
             <h1  class="text-3xl  text-cPrimario mb-3 mt-5 text-left">Seleccione la opción deseada:</h3>
