@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     {{-- Barra de estilos --}}
     @stack('styles')
-    <link rel="stylesheet" href="{{ asset('build/assets/app.269b389a.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app.5807e462.css') }}">
     {{-- <link rel="shortcut icon" href="{{ asset('img/favicon/') }}" type="image/x-icon"> --}}
     {{-- archivos js --}}
     <script src="{{ asset('build/assets/app.e23c9920.js') }}" defer></script>
@@ -56,7 +56,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                 </svg>
-                Publicaciones</a>
+                Eventos</a>
             @auth
                 @if (auth()->user()->type == 2)
                     <a href="{{ route('admin.index') }}"
@@ -64,14 +64,10 @@
                         <i class="fa-solid fa-gear  hover:fa-spin" style="color: #fff;"></i>
                         Administración</a>
                 @endif
-                <form method="POST" action="{{ route('register.logout') }}" class="mt-1 hidden lg:flex items-center gap-2">
+                <form method="POST" action="{{ route('register.logout') }}" class="hidden lg:flex items-center gap-2">
                     @csrf
-                    <button type="submit" class=" flex text-white text-3xl md:mr-3 font-bold cursor-pointer mt-1 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-                        </svg>
+                    <i class="fa-solid fa-right-from-bracket" style="color: #ffffff;" class="text-3xl"></i>
+                    <button type="submit" class=" flex text-white text-3xl  font-bold cursor-pointer ">
                         Cerrar sesión</button>
                 </form>
             @endauth

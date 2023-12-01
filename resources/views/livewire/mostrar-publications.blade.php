@@ -4,7 +4,7 @@
                 <tr>
                     <th class="uppercase text-white p-2">ID</th>
                     <th class="uppercase text-white p-2">Titulo</th>
-                    <th class="uppercase text-white p-2">SubTitulo</th>
+                    <th class="uppercase text-white p-2">Fecha de evento</th>
                     <th class="uppercase text-white p-2">Acciones</th>
                 </tr>
         </thead>
@@ -13,7 +13,8 @@
             <tr>
                 <td class="text-center">{{$evento->id}}</td>
                 <td class="text-center">{{$evento->title}}</td>
-                <td class="text-center">{{$evento->sub_title}}</td>
+                {{-- <td class="text-center">{{dd(gettype($evento->date))}}</td> --}}
+                <td class="text-center">{{$evento->date->format('d-m-Y')}}</td>
                 <td>
                     <div class="sm:grid  sm:grid-cols-2  gap-5">
                                 

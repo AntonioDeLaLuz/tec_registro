@@ -10,9 +10,9 @@
 @section('contenido')
     <h1 class="text-center font-bold  text-4xl text-primario mt-5 mb-7 md:mb-10">Registrar evento</h1>
     <div class="grid md:grid-cols-2 container mx-auto w-10/12 mt-5 gap-10">
-        <form action="{{ route('eventos.create') }}" method="POST" autocomplete="off">
+        <form action="{{ route('eventos.create') }}"  class="row-start-2 md:row-auto" method="POST" autocomplete="off">
             @csrf
-            <div class="grid lg:grid-cols-2 gap-4">
+            
                 <div class="mb-5">
                     <label class="font-bold text-primario uppercase  block mb-4" for="title">Titulo:</label>
                     <input
@@ -33,7 +33,6 @@
                         <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{ $message }}</p>
                     @enderror
                 </div>
-            </div>
             <div class="mb-5">
                 <label class="font-bold text-primario uppercase  block mb-4" for="author">Autor:</label>
                     <input
@@ -67,11 +66,13 @@
                     <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="grid items-center mt-5">
-                <input type="submit" value="Registrar" class="bg-secundario border-none rounded-md text-white py-6 px-8 mx-auto inline-block shadow-sm hover:cursor-pointer"> 
-            </div>      
+            <div class="flex justify-between my-5">
+                <a href="{{ route('admin.eventos') }}" class="bg-cTerciario border-none rounded-md text-white font-bold py-4 px-8 mx-auto inline-block shadow-sm hover:cursor-pointer">Regresar</a>
+                <input type="submit" value="Registrar"
+                    class="bg-secundario border-none rounded-md text-white font-bold py-4 px-8 mx-auto inline-block shadow-sm hover:cursor-pointer">
+            </div>   
         </form>
-        <div>
+        <div class="row-start-1 md:row-auto">
             <label class="font-bold text-primario uppercase mb-4 block" for="author">Seleccione el poster del evento:
             </label>
             <form action="{{ route('image.store') }}" method="POST" id="dropzone" enctype="multipart/form-data"

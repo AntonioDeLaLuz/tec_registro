@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Evento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class EventosController extends Controller
@@ -36,7 +37,7 @@ class EventosController extends Controller
             'sub_title'=>$request->sub_title,
             'author'=>$request->author,
             'descripcion'=>$request->descripcion,
-            'date'=>$request->date,
+            'date'=>Carbon::parse($request->date),
             'urlimg'=>$request->urlimg
          ]);
         return redirect()->route('admin.eventos');

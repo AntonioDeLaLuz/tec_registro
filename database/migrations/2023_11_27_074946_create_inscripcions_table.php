@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('evento_id')->constrained()->onDelete('cascade');
-            $table->date('fecha_inscripcion',255)->nullable();
+            $table->date('fecha_inscripcion')->nullable();
         });
     }
 

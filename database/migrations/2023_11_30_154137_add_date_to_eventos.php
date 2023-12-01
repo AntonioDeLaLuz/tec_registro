@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::table('eventos', function (Blueprint $table) {
             //
-            $table->date('fecha_evento',255)->nullable();
+            $table->date('date')->nullable();
+            $table->integer('estatus',1)->nullable();
         });
     }
 
@@ -28,7 +29,7 @@ return new class extends Migration
     {
         Schema::table('eventos', function (Blueprint $table) {
             //
-            $table->dropColumn('fecha_evento');
+            $table->dropColumn('date');
 
         });
     }
