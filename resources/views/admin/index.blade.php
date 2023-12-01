@@ -10,7 +10,7 @@
             <h1  class="text-3xl  text-cPrimario mb-3 mt-5 text-left">Seleccione la opción deseada:</h3>
         </div>
     <div class="">
-        <div class="container mx-auto w-10/12 grid md:grid-cols-4 gap-5 py-10">
+        <div class="container mx-auto w-10/12 grid md:grid-cols-2 lg:grid-cols-4 gap-5 py-10">
                 <a href="{{ route('admin.eventos') }}" class="block mb-5 rounded-3xl">
                     <div class="bg-PanelAdministracionBTN rounded-3xl px-5 py-8 flex items-center justify-center flex-col">
                         <i class="fa-solid fa-calendar fa-2xl my-5" style="color: #ffffff;"></i>

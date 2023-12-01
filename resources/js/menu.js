@@ -1,7 +1,7 @@
 const hero = document.querySelector('.hero');
 const body = document.querySelector('body');
 // aaa
-function MenuDesplegable() {
+export function menuDesplegable() {
     const menu = document.querySelector('.menu');
     const divMenuDeslizable = document.createElement('DIV');
 
@@ -41,7 +41,6 @@ function MenuDesplegable() {
         body.classList.add('fijarbody');
 
         clickABotones();
-        scrollMovil();
     }
     divMenuDeslizable.onclick = function() {
         limpiarBotones();
@@ -80,6 +79,3 @@ function limpiarBotones() {
     // quitar el overlay del menu
     hero.removeChild(divMenuDeslizable);
 }
-module.exports = {
-    MenuDesplegable:MenuDesplegable 
-};

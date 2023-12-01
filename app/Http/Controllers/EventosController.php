@@ -28,6 +28,7 @@ class EventosController extends Controller
             'sub_title'=>'required | min:5 | max:255',
             'author'=>'required | min:5 | max:255',
             'descripcion'=>'required | min:5 | max:255',
+            'date'=>'required',
             'urlimg'=>'required'
         ]);
         Evento::create([
@@ -35,6 +36,7 @@ class EventosController extends Controller
             'sub_title'=>$request->sub_title,
             'author'=>$request->author,
             'descripcion'=>$request->descripcion,
+            'date'=>$request->date,
             'urlimg'=>$request->urlimg
          ]);
         return redirect()->route('admin.eventos');
@@ -53,6 +55,7 @@ class EventosController extends Controller
              'sub_title'=>'required | min:5 | max:255',
              'author'=>'required | min:5 | max:255',
              'descripcion'=>'required | min:5 | max:255',
+             'date'=>'required',
              'urlimg'=>'required'
          ]);
          $evento->update([
@@ -60,6 +63,7 @@ class EventosController extends Controller
             'sub_title'=>$request->sub_title,
             'author'=>$request->author,
             'descripcion'=>$request->descripcion,
+            'date'=>$request->date,
             'urlimg'=>$request->urlimg
           ]);
         $eventos=Evento::all();

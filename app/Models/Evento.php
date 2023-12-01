@@ -13,6 +13,7 @@ class Evento extends Model
         'sub_title',
         'author',
         'descripcion',
+        'date',
         'urlimg'  
     ];
 
@@ -21,12 +22,6 @@ class Evento extends Model
         // Una publicacion puede tener multiples comentarios
         // return $this->hasMany(Comentario::class)->join('users', 'users.id', '=', 'comentarios.user_id')->where('validacion', 1)->get();
         return $this->hasMany(Comentario::class)->join('users', 'users.id', '=', 'comentarios.user_id')->where('validacion', 1)->select('users.name','users.lastnameP','users.lastnameM', 'comentarios.comentario','comentarios.created_at')->get();
-    }
-    // Obtener los comentarios
-    public function register(){
-        // Una publicacion puede tener multiples comentarios
-        // return $this->hasMany(Comentario::class)->join('users', 'users.id', '=', 'comentarios.user_id')->where('validacion', 1)->get();
-        return $this->hasMany(RegisterEvent::class)->join('users', 'users.id', '=', 'comentarios.user_id')->where('validacion', 1)->select('users.name','users.lastnameP','users.lastnameM', 'comentarios.comentario','comentarios.created_at')->get();
     }
     // Función de likes
     public function likes(){

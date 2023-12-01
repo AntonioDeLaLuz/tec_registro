@@ -7,10 +7,10 @@
     <title>@yield('title')</title>
     {{-- Barra de estilos --}}
     @stack('styles')
-    <link rel="stylesheet" href="{{ asset('build/assets/app.cd8a549f.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app.269b389a.css') }}">
     {{-- <link rel="shortcut icon" href="{{ asset('img/favicon/') }}" type="image/x-icon"> --}}
     {{-- archivos js --}}
-    <script src="{{ asset('build/assets/app.3b3dc7d6.js') }}" defer></script>
+    <script src="{{ asset('build/assets/app.e23c9920.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/c311e4c45d.js" crossorigin="anonymous"></script>
     {{-- Agrega estilos de live --}}
     @livewireStyles
@@ -39,18 +39,18 @@
 <body class="bg-white    flex flex-col justify-between">
     <header class="p-5  bg-primario shadow">
         <!-- navbar-->
-        <nav class="flex justify-between items-center md:justify-center gap-6">
+        <nav class="flex justify-between items-center lg:justify-center gap-6">
             <a href="{{ route('index') }}"
                 class="text-center text-white font-bold text-3xl no-underline flex items-center gap-2"> <svg
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-8 h-8">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-                </svg>Inicio
+                </svg>
             </a>
-            <div class="menu md:hidden"><i class="fa-solid fa-bars" style="color: #f2f2f2;"></i></div>
+            <div class="menu lg:hidden"><i class="fa-solid fa-bars" style="color: #f2f2f2;"></i></div>
             <a href="{{ route('pages.eventos') }}"
-                class="text-center text-white font-bold text-3xl no-underline hidden md:flex items-center gap-2">
+                class="text-center text-white font-bold text-3xl no-underline hidden lg:flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-8 h-8">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -60,11 +60,11 @@
             @auth
                 @if (auth()->user()->type == 2)
                     <a href="{{ route('admin.index') }}"
-                        class="text-center text-white font-bold text-3xl no-underline hidden md:flex items-center gap-2">
+                        class="text-center text-white font-bold text-3xl no-underline hidden lg:flex items-center gap-2">
                         <i class="fa-solid fa-gear  hover:fa-spin" style="color: #fff;"></i>
                         Administración</a>
                 @endif
-                <form method="POST" action="{{ route('register.logout') }}" class="mt-1 hidden md:flex items-center gap-2">
+                <form method="POST" action="{{ route('register.logout') }}" class="mt-1 hidden lg:flex items-center gap-2">
                     @csrf
                     <button type="submit" class=" flex text-white text-3xl md:mr-3 font-bold cursor-pointer mt-1 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -78,7 +78,7 @@
 
             @guest
                 <a href="{{ route('register.login') }}"
-                    class="text-center text-white font-bold text-3xl no-underline hidden md:flex items-center gap-2 ">
+                    class="text-center text-white font-bold text-3xl no-underline hidden lg:flex items-center gap-2 ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -127,5 +127,4 @@
     @livewireScripts
     @stack('scripts')
 </body>
-
 </html>
