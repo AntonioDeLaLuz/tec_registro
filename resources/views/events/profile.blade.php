@@ -77,7 +77,7 @@
     <div>
         <h4 class="block text-3xl font-bold text-center mb-5 text-cPrimario">Inscribirse ahora</h4>
         <div class="grid place-items-center">
-            <a class="capitalize rounded-md bg-secundario border-none text-white py-5 px-8 mx-auto inline-block shadow-xl  mb-4 hover:cursor-pointer my-10">Más información</a>
+            <a href="{{ route('inscripcion.create', $evento) }}" class="capitalize rounded-md bg-secundario border-none text-white py-5 px-8 mx-auto inline-block shadow-xl  mb-4 hover:cursor-pointer my-10">Más información</a>
 
         </div>
     </div>

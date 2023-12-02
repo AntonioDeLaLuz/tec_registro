@@ -13,8 +13,10 @@
             <tr>
                 <td class="text-center">{{$evento->id}}</td>
                 <td class="text-center">{{$evento->title}}</td>
-                {{-- <td class="text-center">{{dd(gettype($evento->date))}}</td> --}}
-                <td class="text-center">{{$evento->date->format('d-m-Y')}}</td>
+                @php
+                    $fechaFormateada = date('d-m-Y', strtotime($evento->date));
+                @endphp
+                <td class="text-center">{{$fechaFormateada}}</td>
                 <td>
                     <div class="sm:grid  sm:grid-cols-2  gap-5">
                                 

@@ -53,7 +53,7 @@ Route::get('/eventos/{evento:id}',[EventosController::class,'show'])->name('even
 
 
 // Incripciones
-Route::get('/eventos/{evento:name}/inscripcion',[InscripcionsController::class,'index'])->name('inscripcion.create');
+Route::get('/eventos/{evento:title}/inscripcion',[InscripcionsController::class,'index'])->name('inscripcion.create');
 //Catalogo
 Route::get('/catalogo', [EventosController::class,'index'])->name('eventos.catalogue');
 

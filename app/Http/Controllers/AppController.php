@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Evento;
 use App\Models\Publications;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class AppController extends Controller
@@ -14,7 +16,14 @@ class AppController extends Controller
         return view('index',['publications'=>$publications]);
     }
     public function appEventos(){
+        
         $eventos=Evento::all();
-        return view('page.eventos',['eventos'=>$eventos]);
+        $mes = new Collection();
+        foreach ($eventos as $evento) {
+            $fechaCarbon = Carbon::parse($evento->date);
+            $fechaCarbon->locale('es');
+            $nombreMes = $fechaCarbon->format('F');
+        }
+        return view('page.eventos',['eventos'=>$eventos,'nombreMes'=>$nombreMes]);
     }
 }

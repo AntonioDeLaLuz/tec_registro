@@ -22,7 +22,7 @@ class LikePublication extends Component
     public function click()
     {
         if ($this->publication->checkLike(auth()->user())) {
-            $this->publication->likes()->where('publications_id', $this->publication->id)->delete();
+            $this->publication->likes()->where('evento_id', $this->publication->id)->delete();
             $this->isLiked = false;
             $this->likes--;
         } else {
