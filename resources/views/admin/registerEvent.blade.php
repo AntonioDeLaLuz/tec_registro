@@ -31,16 +31,6 @@ Inscripciones
             <td class="text-center">{{$register_event->publication_name}}</td>
             <td class="text-center">
                 <div class="flex items-center justify-center space-x-4">
-                    {{-- Validar --}}
-                    <form action="{{ route('register_event.validate',$register_event->id)}}" method="POST" >
-                        @csrf
-                        <div class="flex items-center bg-green-500 p-2 rounded-xl hover:bg-green-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <input type="submit" value="Validar" class="bg-green-500 hover:bg-green-600 cursor-pointer text-center p-2 text-white font-bold ">
-                        </div>
-                    </form>
                     {{-- Editar --}}
                     <form action="{{ route('register_event.edit',$register_event->id)}}" method="GET" >
                         @csrf
