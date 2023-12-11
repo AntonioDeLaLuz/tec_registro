@@ -6,7 +6,7 @@
 <h3 class="bg-titulo px-12 py-6 mt-5 text-white font-bold uppercase text-4xl mx-auto inline-block">Crear registro </h3>
 
 <div class="grid md:grid-cols-2 container px-10 py-3 mx-auto">
-    <form action="{{ route('register.store',['publication'=>$publication->id]) }}" method="POST" autocomplete="off">
+    <form action="{{ route('register_event.store',['publication'=>$publication->id]) }}" method="POST" autocomplete="off">
         @csrf
         <div class="p-4">
             <div class="mb-5">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="mb-5">
-                <label class="font-bold text-primario uppercase mb-4 block" for="companion">Acompañante de la cena:</label>
+                <label class="font-bold text-primario uppercase mb-4 block" for="companion">Acompañante a la cena:</label>
                 <input class="px-4 py-2 block w-full shadow-md rounded-xl @error('companion') border-red-500 @enderror" type="text" id="companion" name="companion" placeholder="Si tiene un acompañante para la cena por favor ingreselo" value="{{old('companion')}}">
                 @error('companion')
                 <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
@@ -88,28 +88,12 @@
                 @enderror
             </div>
             <div class="mb-5">
-                <label class="font-bold text-primario uppercase mb-4 block" for="solicitud_equipo">Solicitud de equipo:</label>
-                <label class="font-bold text-primario uppercase mb-4 block" >-Cañon</label>
-                <label class="font-bold text-primario uppercase mb-4 block" >-PC</label>
-                <label class="font-bold text-primario uppercase mb-4 block" >-Audio</label>
-                <label class="font-bold text-primario uppercase mb-4 block" >-Extensión</label>
-                <input class="px-4 py-2 block w-full shadow-md rounded-xl @error('solicitud_equipo') border-red-500 @enderror" type="text" id="solicitud_equipo" name="solicitud_equipo" placeholder="Si requiere algun equipo ingreselo" value="{{old('solicitud_equipo')}}">
-                @error('solicitud_equipo')
-                <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
-                @enderror
-            </div>
-            <div class="mb-5">
                 <label class="font-bold text-primario uppercase mb-4 block" for="tematica">Tematica a la que pertenece:</label>
-                <label class="font-bold text-primario uppercase mb-4 block" >-Tecnología sustentable</label>
-                <label class="font-bold text-primario uppercase mb-4 block" >-Sistemas de gestión</label>
-                <label class="font-bold text-primario uppercase mb-4 block" >-Gestión ambiental</label>
-                <label class="font-bold text-primario uppercase mb-4 block" >-Salud y sustentabilidad</label>
                 <input class="px-4 py-2 block w-full shadow-md rounded-xl @error('tematica') border-red-500 @enderror" type="text" id="tematica" name="tematica" placeholder="Ingrese la tematica a la que pertenece" value="{{old('tematica')}}">
                 @error('tematica')
                 <p class="bg-red-500 text-center text-white p-2 font-bold rounded-xl mt-2">{{$message}}</p>
                 @enderror
             </div>
-
         </div>
         <div class="grid items-center">
             <input type="submit" value="Registrar inscripción" class="uppercase font-bold bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-sm rounded-xl cursor-pointer">

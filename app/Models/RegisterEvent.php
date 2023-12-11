@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
-class RegisterEvent extends Authenticatable
+class RegisterEvent extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 

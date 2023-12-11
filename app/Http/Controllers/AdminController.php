@@ -44,8 +44,9 @@ class AdminController extends Controller
 
     public function adminRegisterEvent()
     {
-        $registers_event = DB::table('register_event')->join('users', 'users.id', '=', 'register_event.users_id')->join('publications', 'publications.id', '=', 'register_event.publications_id')->select('register_event.id', 'users.name', 'users.lastnameP', 'users.lastnameM', 'publications.name as publication_name')->orderBy('publication_name', 'desc')->get();
+        $registers_event = DB::table('register_event')->join('users', 'users.id', '=', 'register_event.users_id')->join('publications', 'publications.id', '=', 'register_event.publications_id')->select('register_event.id', 'register_event.lider', 'register_event.companion', 'users.name', 'users.lastnameP', 'users.lastnameM', 'publications.name as publication_name')->orderBy('publication_name', 'desc')->get();
         return view('admin.registerEvent', ['registers_event' => $registers_event]);
+
     }
 
     public function adminComentarios()

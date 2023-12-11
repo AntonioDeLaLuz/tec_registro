@@ -71,7 +71,7 @@ class PublicationsController extends Controller{
             'urlimg'=>$request->urlimg
           ]);
         $publications=Publications::all();
-        return redirect()->route('admin.publications',['publications'=>$publications]);;
+        return redirect()->route('admin.publications',['publications'=>$publications]);
         //  return view('admin.publications',['publications'=>$publications]);
             // return back()->with('mensaje','Publications actualizada correctamente');
 

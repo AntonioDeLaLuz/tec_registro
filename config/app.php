@@ -197,6 +197,7 @@ return [
         // Añadiendo Intervention Image
         Intervention\Image\ImageServiceProvider::class
 
+
     ],
 
     /*

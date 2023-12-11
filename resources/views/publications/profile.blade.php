@@ -82,8 +82,8 @@
                 {{-- Agregar inscripcion --}}
                 @auth
                         <div class="grid items-center">
-                            <a href="{{route('register.index',['publication'=>$publication->id])}}"
-                               class="uppercase bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-xl rounded-3xl mb-4 hover:cursor-pointer">Incribete</a>
+                            <a href="{{route('register_event.create',['publication'=>$publication->id])}}"
+                               class="uppercase bg-secundario border-none text-white py-6 px-8 mx-auto inline-block shadow-xl rounded-3xl mb-4 hover:cursor-pointer">Inscribete</a>
                         </div>
                 @endauth
             </div>

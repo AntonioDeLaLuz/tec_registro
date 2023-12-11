@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PDF\InvitationController;
 use App\Http\Controllers\RegisterEventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
@@ -35,6 +36,9 @@ Route::get('/', [AppController::class,'index'])->name('index');
 // Imagenes
 Route::post('/imagenes', [ImagenController::class,'store'])->name('image.store');
 
+// Invitaciones cena
+Route::get('/create-image-with-text', [ImagenController::class, 'editImageWithText']);
+
 // Admin
 Route::get('/administracion', [AdminController::class,'index'])->name('admin.index');
 Route::get('/administracion/publications', [AdminController::class,'adminPublications'])->name('admin.publications');
@@ -44,13 +48,13 @@ Route::get('/administracion/usuarios', [AdminController::class,'adminUsers'])->n
 Route::get('/administracion/registerEvent', [AdminController::class,'adminRegisterEvent'])->name('admin.registerEvent');
 
 // Colaboradores
-Route::get('/colaboradores', [PostsController::class,'index'])->name('posts.catalogue');
-Route::get('/colaboradores/registrar-colaborador', [PostsController::class,'create'])->name('posts.create');
-Route::post('/colaboradores/registrar-colaborador', [PostsController::class,'store']);
-Route::get('/colaboradores/{post:title}',[PostsController::class,'show'])->name('posts.show');
-Route::get('/colaboradores/{post}/edit',[ PostsController::class,'edit'])->name('posts.edit');
-Route::post('/colaboradores/{post}/edit',[ PostsController::class,'update']);
-Route::delete('/colaboradores/{post}',[ PostsController::class,'destroy'])->name('posts.destroy');
+Route::get('/Posts', [PostsController::class,'index'])->name('posts.catalogue');
+Route::get('/Posts/registrar-posts', [PostsController::class,'create'])->name('posts.create');
+Route::post('/Postss/registrar-posts', [PostsController::class,'store']);
+Route::get('/Posts/{post:title}',[PostsController::class,'show'])->name('posts.show');
+Route::get('/Posts/{post}/edit',[ PostsController::class,'edit'])->name('posts.edit');
+Route::post('/Posts/{post}/edit',[ PostsController::class,'update']);
+Route::delete('/Posts/{post}',[ PostsController::class,'destroy'])->name('posts.destroy');
 
 
 // Login
@@ -83,7 +87,15 @@ Route::post('/publications/{publication}/likes',[LikeController::class,'store'])
 Route::delete('/publications/{publication}/likes',[LikeController::class,'destroy'])->name('publications.likes.destroy');
 
 // Registro de evento
-Route::post('/register_event/confirm_asistencia/{publication:id}',[RegisterEventController::class,'store'])->name('register.store');
-Route::get('/register_event/confirm_asistencia/{publication:id}',[RegisterEventController::class,'prueba'])->name('register.index');
-Route::post('/register_event/{register_event}',[ RegisterEventController::class,'update'])->name('register.validate');
-Route::delete('/register_event/{register_event}',[ RegisterEventController::class,'destroy'])->name('register.destroy');
+
+Route::get('/register_event/crear/registro/evento/{publication:id}',[RegisterEventController::class,'create'])->name('register_event.create');
+Route::post('/register_event/crear/registro/evento/{publication:id}',[RegisterEventController::class,'store'])->name('register_event.store');
+Route::get('/register_event/editar/registro/evento/{registers_event}',[ RegisterEventController::class,'edit'])->name('register_event.edit');
+Route::post('/register_event/editar/registro/evento/{registers_event}',[ RegisterEventController::class,'update']);
+Route::delete('/register_event/eliminar/registro/evento/{register_event}',[ RegisterEventController::class,'destroy'])->name('register_event.destroy');
+Route::post('/register_event/validar/registro/evento/{register_event}',[ RegisterEventController::class,'updateStatusValidateRegisterEvent'])->name('register_event.validate');
+
+
+// Template de invitacion
+Route::get('/invitation/preview/pdf',[ InvitationController::class,'previewInvitation'])->name('invitation.preview.pdf');
+Route::get('/invitation/send/pdf',[ InvitationController::class,'sendInvitation'])->name('invitation.send.pdf');

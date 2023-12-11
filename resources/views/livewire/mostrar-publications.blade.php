@@ -1,5 +1,4 @@
 <div>
-   
         <table class="w-full">
             <thead class="bg-primario ">
                 <tr>
